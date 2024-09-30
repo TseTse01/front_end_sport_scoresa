@@ -1,0 +1,15 @@
+.NavbarContainer {
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+width: 100%;
+padding-top: 50px;
+transition: 0.9 ease-in-out;
+.navlink {
+    cursor: pointer;
+    &:hover {
+        border-bottom: 5px solid salmon;
+        color: rgb(160, 189, 179);
+    }
+}
+}
