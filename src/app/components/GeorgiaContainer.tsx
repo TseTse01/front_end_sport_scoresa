@@ -4,15 +4,25 @@ import Card from "./Card";
 import Image from 'next/image'
 import { MatchData } from "../types/MatchData";
 
-interface EnglandContainerProps {
+
+interface GeorgiaContainerProps {
   data: MatchData[];  // Le prop attendu
 }
 
-const EnglandContainer: React.FC<EnglandContainerProps> = ({ data }) => {
+
+
+
+
+const GeorgiaContainer: React.FC<GeorgiaContainerProps> = ({ data }) => {
+  // console.log(data);
+
+
+
+
   return (
     <div>
 
-      {data.length !== 0 ?
+      {data &&
         <div className="navbarCardContainer">
           <div className="items">
             <div className="left">
@@ -27,10 +37,10 @@ const EnglandContainer: React.FC<EnglandContainerProps> = ({ data }) => {
           <div>{data.map((el, index) => (
             <Card data={el} key={index} />
           ))}</div>
-        </div> : " hop hop"
+        </div>
       }
     </div>
   );
 };
 
-export default EnglandContainer;
+export default GeorgiaContainer;

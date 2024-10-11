@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { IoStarOutline, IoStar } from "react-icons/io5";
 
-const Star = () => {
-    return (
-        <div>
-            😂
-        </div>
-    );
+// Ajout du typage pour un composant fonctionnel
+const Star: React.FC = () => {
+  // Typage explicite de `useState` en tant que booléen
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  // Pas de typage nécessaire pour `handleSubmit` car TypeScript peut l'inférer automatiquement
+  const handleSubmit = (): void => {
+    setIsActive(!isActive);
+  };
+
+  return (
+    <div onClick={handleSubmit}>
+      {!isActive ? <IoStarOutline /> : <IoStar />}
+    </div>
+  );
 };
 
 export default Star;

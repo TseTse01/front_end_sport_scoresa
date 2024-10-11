@@ -1,18 +1,29 @@
 import React from "react";
 import Star from "./Star";
 import Card from "./Card";
-import Image from 'next/image'
 import { MatchData } from "../types/MatchData";
+import Image from 'next/image'
+// Typage des props avec l'interface
 
-interface EnglandContainerProps {
+
+interface AllemagneContainerProps {
   data: MatchData[];  // Le prop attendu
 }
 
-const EnglandContainer: React.FC<EnglandContainerProps> = ({ data }) => {
+
+
+
+
+const AllemagneContainer: React.FC<AllemagneContainerProps> = ({ data }) => {
+  // console.log(data);
+
+
+
+
   return (
     <div>
 
-      {data.length !== 0 ?
+      {data &&
         <div className="navbarCardContainer">
           <div className="items">
             <div className="left">
@@ -27,10 +38,10 @@ const EnglandContainer: React.FC<EnglandContainerProps> = ({ data }) => {
           <div>{data.map((el, index) => (
             <Card data={el} key={index} />
           ))}</div>
-        </div> : " hop hop"
+        </div>
       }
     </div>
   );
 };
 
-export default EnglandContainer;
+export default AllemagneContainer;
