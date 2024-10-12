@@ -2,14 +2,34 @@
 display: flex;
 align-items: center;
 justify-content: space-evenly;
-width: 100%;
-padding-top: 50px;
+width: 80%;
 transition: 0.9 ease-in-out;
+height: 35px;
+color: $color-1;
+margin: 0 auto;
+padding-bottom: 20px;
+.favoris{
+    display: flex;
+    span {
+
+        &:hover {
+            cursor: pointer;
+            border-bottom: 5px solid #7ca438;
+            color: rgb(160, 189, 179);
+        }
+    }
+    .star {
+        padding-left: 7px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+}
 .navlink {
     cursor: pointer;
     &:hover {
-        border-bottom: 5px solid salmon;
+        border-bottom: 5px solid $color-5;
         color: rgb(160, 189, 179);
     }
-}
 }

@@ -10,7 +10,7 @@ const HeaderContainer = () => {
             </div>
             <div className='matchsContainer'><LeagueContainer />
             </div>
-            <div className='matchTiketContainer'></div>
+            <div className='matchTiketContainer'>ssooooss</div>
         </div>
     );
 };

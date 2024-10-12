@@ -1,6 +1,9 @@
 $color-1: #fafeff;
-$color-2: #2b6fb3;
-$color-3: #e7f7fe;
+$color-2: #54708e;
+$color-3: #617178;
+$color-4: #021218;
+$color-5: #7ca438;
+$color-6: #173838;
 
 
 * {
@@ -12,26 +15,34 @@ $color-3: #e7f7fe;
   .navbarCardContainer {
     color: white ;
     margin-top: 10px;
+    .star {
+      cursor: pointer;
+     }
     .items {
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 35px;
-      background-color: #2b6fb3;
+      background-color: $color-6;
       align-items: center;
       border-radius: 5px;
       width: 95%;
       padding-top: 3px;
+      height: 45px;
       .left {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding-top: 5px;
         padding-left: 5px;
-        p {
-          align-items: center;
-          padding-right: 5px;
-        padding-left: 5px;
+        width: 50%;
+      }
+      .right {
+        justify-content: end;
+        align-items: center;
+        padding-right: 15px;
+        cursor: pointer;
+        &:hover {
+          color: $color-5;
         }
       }
     }

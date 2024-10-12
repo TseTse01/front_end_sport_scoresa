@@ -1,6 +1,6 @@
 .headerContainer {
 min-height: 100vh;
-background-color: blanchedalmond;
+background-color: $color-4;
 display: flex;
 width: 100%;
 .competitionscontainer {
@@ -8,10 +8,10 @@ width: 100%;
 }
 .matchsContainer {
     width: 60%;
-    background-color: black;
+    background-color: $color-4
 }
 .matchTiketContainer {
     width: 20%;
-    background-color: rgb(136, 37, 37);
+    background-color: $color-4;
 }
 }

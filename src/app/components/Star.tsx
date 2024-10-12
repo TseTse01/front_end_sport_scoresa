@@ -12,7 +12,7 @@ const Star: React.FC = () => {
   };
 
   return (
-    <div onClick={handleSubmit}>
+    <div onClick={handleSubmit} className='star'>
       {!isActive ? <IoStarOutline /> : <IoStar />}
     </div>
   );

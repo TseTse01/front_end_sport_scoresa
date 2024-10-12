@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
 import EnglandContainer from "./EnglandContainer";
 import NavbarLeagueContainer from "./NavbarLeagueContainer";
 import axios from "axios";
@@ -21,46 +20,70 @@ interface LeagueData {
 }
 
 const LeagueContainer: React.FC = () => {
-  // 2. Définir les types des variables d'état avec useState
+  // Initialisation de la date actuelle dans l'état
+  const [currentDate, setCurrentDate] = useState<string>(getCurrentDate());
   const [dataPremierLeague, setDataPremierLeague] = useState<MatchData[] | undefined>(undefined);
   const [dataBundesLiga, setDataBundesLiga] = useState<MatchData[] | undefined>(undefined);
   const [dataLaLiga, SetDataLaliga] = useState<MatchData[] | undefined>(undefined);
   const [dataLigue1, SetDataLigue1] = useState<MatchData[] | undefined>(undefined);
   const [dataErovnuliLiga, setDataErovnuliLiga] = useState<MatchData[] | undefined>(undefined);
   const [dataSerieA, setDataSerieA] = useState<MatchData[] | undefined>(undefined);
-  const [isTodayMatch, setIsTodayMatch] = useState<boolean>(false)
-  // 3. Typage de la requête API avec axios
+  const [isTodayMatch, setIsTodayMatch] = useState<boolean>(false);
+
+  // Fonction pour obtenir la date actuelle
+  function getCurrentDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  // Fonction pour gérer le changement de date via l'input
+  const handleDateChange = (newDate: string) => {
+    setCurrentDate(newDate);
+  };
+
+  // Récupérer les données de l'API lorsque la date change
   useEffect(() => {
-    axios
-      .get<LeagueData>("http://localhost:3000/matchToday")
-      .then((response) => {
+    const fetchData = async () => {
+      // console.log(currentDate);
+
+      try {
+        const response = await axios.get<LeagueData>(`http://localhost:3000/matchToday/${currentDate}`);
         const d = response.data;
+
         if (d.result) {
-          // 4. Mettre à jour les états avec les données récupérées
+          setIsTodayMatch(false);
           setDataBundesLiga(d.deBundesliga);
           setDataPremierLeague(d.enPremierLeague);
           SetDataLaliga(d.esLaliga);
           SetDataLigue1(d.frLigue1Data);
           setDataErovnuliLiga(d.geErovnuliLiga);
           setDataSerieA(d.itSerieA);
-        } else {
-          setIsTodayMatch(true)
-        }
-      })
-      .catch((error) => {
-        console.error("Erreur lors de la récupération des données:", error);
-      });
-  }, []);
-  const NoMatch = (<div>
-    haliludia
-  </div>)
 
+        } else {
+          setIsTodayMatch(true);
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données:", error);
+      }
+    };
+
+    fetchData(); // Appel API à chaque changement de date
+  }, [currentDate]); // Se déclenche à chaque changement de `currentDate`
+
+  useEffect(() => {
+    // Cette ligne devient redondante et peut être supprimée
+    setCurrentDate(getCurrentDate());
+  }, []);
+  const NoMatch = <div>haliludia</div>;
 
   return (
     <div className="leagueContainer">
-      <NavbarLeagueContainer />
-      {isTodayMatch ? (NoMatch) : (
-        <div>
+      <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
+      {isTodayMatch ? NoMatch : (
+        <div className="football-container">
           {dataPremierLeague && <EnglandContainer data={dataPremierLeague} />}
           {dataBundesLiga && <AllemagneContainer data={dataBundesLiga} />}
           {dataLaLiga && <EspagneContainer data={dataLaLiga} />}
