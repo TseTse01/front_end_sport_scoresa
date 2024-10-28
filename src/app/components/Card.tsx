@@ -5,6 +5,7 @@ import { MatchData } from '../types/MatchData';
 
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
+    console.log(data.fixture);
 
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
@@ -24,9 +25,12 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             // match live
         } else if (data.fixture.status.short === "LIVE") {
             setMatchTime(`${data.fixture.status.elapsed} mins`);
+        } else {
+            setMatchTime("Cancelled")
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elapsed]);
     // Dépendances qui déclenchent l'update
+
 
     return (
         <div className='cardContainer'>
@@ -38,8 +42,8 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             </div>
             <div className='center'>
                 <div className='teamContainer'>
-                    <p><Image src={data.teams.away.logo} width={30} height={30} alt="flag england" /></p>
-                    <p>{data.teams.away.name}</p>
+                    <p><Image src={data.teams.home.logo} width={30} height={30} alt={`flag ${data.teams.home.name}`} /></p>
+                    <p>{data.teams.home.name}</p>
                 </div>
                 <div className='score'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.goals.away}</p>
@@ -47,8 +51,8 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
                     <p>{data.fixture.status.short === "NS" ? "0" : data.goals.home}</p>
                 </div>
                 <div className='teamContainer'>
-                    <p><Image src={data.teams.home.logo} width={30} height={30} alt="flag england" /></p>
-                    <p>{data.teams.home.name}</p>
+                    <p><Image src={data.teams.away.logo} width={30} height={30} alt={`flag ${data.teams.away.name}`} /></p>
+                    <p>{data.teams.away.name}</p>
                 </div>
             </div>
             <div className='right'>

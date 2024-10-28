@@ -1,16 +1,14 @@
 "use client";
 import "./styles/index.scss"
-import Navbar from "./components/Navbar";
-import HeaderContainer from "./components/HeaderContainer"
+import Home from "./pages/Home";
 
 
-export default function Home() {
+export default function App() {
+
+
   return (
-    <div className="appContainer">
-      <div className="home">
-        <Navbar />
-        <HeaderContainer />
-      </div>
+    <div className="App">
+      <Home />
     </div>
   )
 }
