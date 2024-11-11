@@ -5,7 +5,7 @@ import { MatchData } from '../types/MatchData';
 
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
-    console.log(data.fixture);
+    // console.log(data.fixture);
 
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
@@ -23,10 +23,10 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
         } else if (data.fixture.status.short === "FT") {
             setMatchTime("match finished");
             // match live
-        } else if (data.fixture.status.short === "LIVE") {
+        } else if (data.fixture.status.short === "LIVE" || data.fixture.status.short === '1H') {
             setMatchTime(`${data.fixture.status.elapsed} mins`);
-        } else {
-            setMatchTime("Cancelled")
+        } else if (data.fixture.status.short === "HT") {
+            setMatchTime("Halftime")
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elapsed]);
     // Dépendances qui déclenchent l'update
@@ -37,7 +37,7 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             <div className='left'>
                 <Star />
                 <div className='starAndTimeContainer'>
-                    <p>{matchTime}</p>
+                    <p className='watch'>{matchTime}</p>
                 </div>
             </div>
             <div className='center'>

@@ -1,6 +1,7 @@
 export interface MatchData {
     fixture: {
         date: string;
+        id: number;
         periods: {
             first?: number;
             second?: number;
