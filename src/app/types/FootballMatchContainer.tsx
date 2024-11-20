@@ -9,24 +9,21 @@ interface DataProps {
     data: MatchData[];
 }
 const FootballMatchContainer: React.FC<DataProps> = ({ data }) => {
-    const ref = React.useRef<HTMLInputElement>(null)
     const dispatch = useDispatch()
-    const handleRecoverUseRef = () => {
-        // console.log(data);
+    const handleRecoverId = () => {
         data.map((el) => {
-            // console.log(el.fixture.id);
             dispatch(recoverIds(el.fixture.id))
         })
-
     }
     return (
         <div className="navbarCardContainer"
-            onClick={handleRecoverUseRef}
-            ref={ref}
         >
             <div className="items">
-                <div className="left">
-                    <Star />
+                <div className="left"
+                    onClick={handleRecoverId}
+                >
+                    <Star
+                    />
                     <Image src={data[0].league.flag} width={30} height={30} alt={`flag ${data[0].league.country}`} />
                     <p>{data[0].league.country} : {data[0].league.name}</p>
                 </div>
@@ -35,9 +32,6 @@ const FootballMatchContainer: React.FC<DataProps> = ({ data }) => {
                 </div>
             </div>
             <div className='cards'
-                onClick={() => {
-                    console.log("hello");
-                }}
             >{data.map((el, index) => <Card data={el} key={index} />)}</div>
         </div >
     );

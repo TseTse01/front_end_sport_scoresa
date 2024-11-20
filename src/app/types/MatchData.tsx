@@ -2,6 +2,7 @@ export interface MatchData {
     fixture: {
         date: string;
         id: number;
+        timestamp: number;
         periods: {
             first?: number;
             second?: number;
@@ -11,7 +12,6 @@ export interface MatchData {
             short?: string;
             long?: string;
         };
-        timestamp: number;
     };
     goals: {
         away?: number;

@@ -20,7 +20,7 @@ interface LeagueData {
 }
 
 const LeagueContainer: React.FC = () => {
-  // Initialisation de la date actuelle dans l'état
+
   const [currentDate, setCurrentDate] = useState<string>(getCurrentDate());
   const [dataPremierLeague, setDataPremierLeague] = useState<MatchData[] | undefined>(undefined);
   const [dataBundesLiga, setDataBundesLiga] = useState<MatchData[] | undefined>(undefined);
@@ -47,7 +47,7 @@ const LeagueContainer: React.FC = () => {
   // Récupérer les données de l'API lorsque la date change
   useEffect(() => {
     const fetchData = async () => {
-      // console.log(currentDate);
+      console.log(currentDate);
 
       try {
         const response = await axios.get<LeagueData>(`http://localhost:3000/matchToday/${currentDate}`);

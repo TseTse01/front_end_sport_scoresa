@@ -1,6 +1,6 @@
 "use client";
-import "./styles/index.scss"
-import Home from "./pages/Home";
+
+import Home from "./Home";
 
 
 export default function App() {

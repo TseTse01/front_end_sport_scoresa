@@ -1,5 +1,3 @@
-"use client";
-
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface CounterState {
@@ -19,11 +17,13 @@ export const counterSlice = createSlice({
     initialState,
     reducers: {
         recoverIds: (state, action) => {
-            if (!state.value.ids.includes(action.payload)) {
+            const index = state.value.ids.indexOf(action.payload);
+            if (index === -1) {
                 state.value.ids.push(action.payload);
                 console.log("ID ajouté:", action.payload);
             } else {
-                console.log("ID déjà présent:", action.payload);
+                state.value.ids.splice(index, 1);
+                console.log("ID supprimé:", action.payload);
             }
         },
         decrement: (state, action) => {

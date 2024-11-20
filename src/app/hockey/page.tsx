@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Favoris = () => {
+const page = () => {
     return (
         <div>
-            cece
+            hockey
         </div>
     );
 };
 
-export default Favoris;
+export default page;

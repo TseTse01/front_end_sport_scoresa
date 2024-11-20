@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Star from './Star';
 import Image from 'next/image';
 import { MatchData } from '../types/MatchData';
-
+import { recoverIds } from '../GlobalRedux/Features/counter/counterSlice';
+import { useDispatch } from 'react-redux';
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
-    // console.log(data.fixture);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
@@ -30,11 +31,16 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elapsed]);
     // Dépendances qui déclenchent l'update
-
+    const handleRecoverId = () => {
+        // envoyer Id dans redux 
+        dispatch(recoverIds(data.fixture.id))
+    }
 
     return (
         <div className='cardContainer'>
-            <div className='left'>
+            <div className='left'
+                onClick={handleRecoverId}
+            >
                 <Star />
                 <div className='starAndTimeContainer'>
                     <p className='watch'>{matchTime}</p>
