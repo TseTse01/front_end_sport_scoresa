@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import EnglandContainer from "./EnglandContainer";
 import NavbarLeagueContainer from "./NavbarLeagueContainer";
