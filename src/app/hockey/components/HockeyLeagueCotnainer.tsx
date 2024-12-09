@@ -40,12 +40,12 @@ const HockeyLeagueCotnainer: React.FC = () => {
     // Récupérer les données de l'API lorsque la date change
     useEffect(() => {
         const fetchData = async () => {
-            console.log(currentDate);
+            // console.log(currentDate);
 
             try {
                 const response = await axios.get<LeagueData>(`http://localhost:3000/hockey/${currentDate}`);
                 const d = response.data;
-                console.log(d);
+                // console.log(d);
 
                 if (d.result) {
                     setIsTodayMatch(false);
@@ -72,10 +72,10 @@ const HockeyLeagueCotnainer: React.FC = () => {
     }, []);
     const NoMatch = <div>haliludia</div>;
 
-    console.log(dataSwedenShl, dataUsaNhl, dataFinlandLiga1, dataGermanyDel);
+    // console.log(dataSwedenShl, dataUsaNhl, dataFinlandLiga1, dataGermanyDel);
 
     return (
-        <div>
+        <div >
             <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
             {isTodayMatch ? NoMatch : (
                 <div>

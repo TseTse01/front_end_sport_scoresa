@@ -48,7 +48,7 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             </div>
             <div className='center'>
                 <div className='teamContainer'>
-                    <p><Image src={data.teams.home.logo} width={30} height={30} alt={`flag ${data.teams.home.name}`} /></p>
+                    <p><Image src={data.teams.home.logo} width={30} height={30} alt={`flag of ${data.teams.home.name}`} /></p>
                     <p>{data.teams.home.name}</p>
                 </div>
                 <div className='score'>

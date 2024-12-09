@@ -1,11 +1,13 @@
 import React from 'react';
 import { HockeyMatchData } from '../types/HockeyMatchData';
 import HockeyMatchContainer from './HockeyMatchContainer';
-
-const CzechExtraliga = () => {
+interface CzechExtraligaProps {
+    data: HockeyMatchData[];
+}
+const CzechExtraliga: React.FC<CzechExtraligaProps> = ({ data }) => {
     return (
         <div>
-            {/* <HockeyMatchContainer data={data} /> */}
+            <HockeyMatchContainer data={data} />
         </div>
     );
 };

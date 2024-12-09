@@ -1,8 +1,7 @@
 "use client";
 import React from 'react';
 import Navbar from '../components/Navbar';
-import HockeyHeaderCotainer from './components/hockeyHeaderCotainer';
-
+import HockeyHeaderCotainer from './components/HockeyHeaderCotainer';
 
 const page = () => {
     return (

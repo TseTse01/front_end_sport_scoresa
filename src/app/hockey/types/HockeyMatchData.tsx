@@ -19,10 +19,11 @@ export interface HockeyMatchData {
     };
     league: {
         id: number;
-        name: string;
+        country: string;
         logo: string;
         flag: string;
         season: number;
+        name: string;
     };
     scores: {
         home?: number;

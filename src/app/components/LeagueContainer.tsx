@@ -48,11 +48,12 @@ const LeagueContainer: React.FC = () => {
   // Récupérer les données de l'API lorsque la date change
   useEffect(() => {
     const fetchData = async () => {
-      console.log(currentDate);
+      // console.log(currentDate);
 
       try {
         const response = await axios.get<LeagueData>(`http://localhost:3000/matchToday/${currentDate}`);
         const d = response.data;
+        console.log(d);
 
         if (d.result) {
           setIsTodayMatch(false);

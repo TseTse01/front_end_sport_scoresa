@@ -1,11 +1,13 @@
 import React from 'react';
 import { HockeyMatchData } from '../types/HockeyMatchData';
 import HockeyMatchContainer from './HockeyMatchContainer';
-
-const GermanyDel = () => {
+interface GermanyDelShlProps {
+    data: HockeyMatchData[];
+}
+const GermanyDel: React.FC<GermanyDelShlProps> = ({ data }) => {
     return (
         <div>
-            {/* <HockeyMatchContainer data={data} /> */}
+            <HockeyMatchContainer data={data} />
         </div>
     );
 };
