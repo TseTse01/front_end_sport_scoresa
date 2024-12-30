@@ -1,16 +1,12 @@
-import React from "react";
+import React from 'react';
+import { BasketMatchData } from '../types/BasketMatchData';
 import Image from "next/image";
 import Star from "@/app/components/Star";
-import { HockeyMatchData } from "../types/HockeyMatchData";
-import CardHockey from "./CardHockey";
+import CardBasket from './CardBasket';
 interface DataProps {
-    data: HockeyMatchData[];
+    data: BasketMatchData[];
 }
-const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
-    // console.log(data);
-
-
-
+const BasketMatchContainer: React.FC<DataProps> = ({ data }) => {
     return (
         <div className="hockeyCardContainer">
             <div className="items">
@@ -31,10 +27,10 @@ const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
                 </div>
             </div>
             <div className='cards'
-            >{data.map((el, index) => <CardHockey data={el} key={index} />)}
+            >{data.map((el, index) => <CardBasket data={el} key={index} />)}
             </div>
         </div>
     );
 };
 
-export default HockeyMatchContainer;
+export default BasketMatchContainer;
