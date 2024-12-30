@@ -9,7 +9,7 @@ import EuroLeague from './EuroLeague';
 import LegaA from './LegaA';
 import Lnb from './Lnb';
 import Nba from './Nba';
-import Eurocup from "./Eurocup";
+import EuroCup from './Eurocup'
 
 
 
@@ -30,7 +30,7 @@ const BasketLeagueContainer: React.FC = () => {
     const [currentDate, setCurrentDate] = useState<string>(getCurrentDate());
     const [acb, setAcb] = useState<BasketMatchData[] | undefined>(undefined);
     const [euroBasket, setEuroBasket] = useState<BasketMatchData[] | undefined>(undefined);
-    const [EuroCup, setEuroCup] = useState<BasketMatchData[] | undefined>(undefined);
+    const [euroCup, setEuroCup] = useState<BasketMatchData[] | undefined>(undefined);
     const [euroLeague, setEuroLeague] = useState<BasketMatchData[] | undefined>(undefined);
     const [legaA, setLegaA] = useState<BasketMatchData[] | undefined>(undefined);
     const [lnb, setLnb] = useState<BasketMatchData[] | undefined>(undefined);
@@ -94,7 +94,7 @@ const BasketLeagueContainer: React.FC = () => {
                 <div>
                     {acb && <Acb data={acb} />}
                     {euroBasket && <EuroBasket data={euroBasket} />}
-                    {EuroCup && <Eurocup data={EuroCup} />}
+                    {euroCup && <EuroCup data={euroCup} />}
                     {euroLeague && <EuroLeague data={euroLeague} />}
                     {legaA && <LegaA data={legaA} />}
                     {lnb && <Lnb data={lnb} />}
