@@ -9,7 +9,7 @@ import EuroLeague from './EuroLeague';
 import LegaA from './LegaA';
 import Lnb from './Lnb';
 import Nba from './Nba';
-import Eurocup from "./Eurocup";
+import Eurocup from "./EuroCup";
 
 
 
@@ -95,7 +95,7 @@ const BasketLeagueContainer: React.FC = () => {
                     {acb && <Acb data={acb} />}
                     {euroBasket && <EuroBasket data={euroBasket} />}
                     {EuroCup && <Eurocup data={EuroCup} />}
-                    {euroLeague && <EuroLeague data={euroLeague} />}
+                    {/* {euroLeague && <EuroLeague data={euroLeague} />} */}
                     {legaA && <LegaA data={legaA} />}
                     {lnb && <Lnb data={lnb} />}
                     {nba && <Nba data={nba} />}

@@ -7,7 +7,6 @@ interface EuroLeagueProps {
 const EuroLeague: React.FC<EuroLeagueProps> = ({ data }) => {
     return (
         <div>
-
             <BasketMatchContainer data={data} />
         </div>
     );

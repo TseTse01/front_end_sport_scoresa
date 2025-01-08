@@ -7,17 +7,22 @@ interface DataProps {
     data: RugbyMatchData[];
 }
 const RugbyMatchContainer: React.FC<DataProps> = ({ data }) => {
+    console.log(data[0].country.flag);
+
     return (
         <div className="hockeyCardContainer">
             <div className="items">
                 <div className="left">
                     <Star />
-                    <Image
-                        src={data[0].country.flag}
-                        width={30}
-                        height={30}
-                        alt={`flag of ${data[0].country.name}`}
-                    />
+                    {
+                        data[0].country.flag ? (<Image
+                            src={data[0].country.flag}
+                            width={30}
+                            height={30}
+                            alt={`flag of ${data[0].country.name}`}
+                        />) : null
+                    }
+
                     <p>
                         {data[0].country.name} : {data[0].league.name}
                     </p>
