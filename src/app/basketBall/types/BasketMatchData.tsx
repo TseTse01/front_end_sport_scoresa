@@ -32,20 +32,20 @@ export interface BasketMatchData {
     },
     scores: {
         home: {
-            quarter_1: string | null;
-            quarter_2: string | null;
-            quarter_3: string | null;
-            quarter_4: string | null;
-            over_time: string | null;
-            total: string | null;
+            quarter_1: number | null;
+            quarter_2: number | null;
+            quarter_3: number | null;
+            quarter_4: number | null;
+            over_time: number | null;
+            total: number | null;
         },
         away: {
-            quarter_1: string | null;
-            quarter_2: string | null;
-            quarter_3: string | null;
-            quarter_4: string | null;
-            over_time: string | null;
-            total: string | null;
+            quarter_1: number | null;
+            quarter_2: number | null;
+            quarter_3: number | null;
+            quarter_4: number | null;
+            over_time: number | null;
+            total: number | null;
 
         }
     },
