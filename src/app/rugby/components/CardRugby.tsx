@@ -40,13 +40,13 @@ const CardRugby: React.FC<{ data: RugbyMatchData }> = ({ data }) => {
     }
 
     return (
-        <div className='hockeyCardContainer'>
-            <div className='hockeyStar'
+        <div className='rugbyCardContainer'>
+            <div className='left'
                 onClick={handleRecoverId}
             >
                 <Star />
+                <div className='time'>{matchTime}</div>
             </div>
-            <div className='time'>{matchTime}</div>
             <div className='teamContainer'>
                 <div className='team'>
                     <p><Image src={data.teams.home.logo} width={20} height={20} alt={`flag of ${data.teams.home.name}`} /></p>
@@ -58,16 +58,16 @@ const CardRugby: React.FC<{ data: RugbyMatchData }> = ({ data }) => {
                 </div>
             </div>
             <div className='scoreContainer'>
-                <div className='teamHomeScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.home}</p>
-                    <p>{data.fixture.periods.first.home == null ? " " : data.fixture.periods.first.home}</p>
-                    <p>{data.fixture.periods.second.home == null ? " " : data.fixture.periods.second.home}</p>
+                    <p>{data.fixture.periods.first.home == null ? "-" : data.fixture.periods.first.home}</p>
+                    <p>{data.fixture.periods.second.home == null ? "-" : data.fixture.periods.second.home}</p>
 
                 </div>
-                <div className='teamAwayScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.away}</p>
-                    <p>{data.fixture.periods.first.away == null ? " " : data.fixture.periods.first.away}</p>
-                    <p>{data.fixture.periods.second.away == null ? " " : data.fixture.periods.second.away}</p>
+                    <p>{data.fixture.periods.first.away == null ? "-" : data.fixture.periods.first.away}</p>
+                    <p>{data.fixture.periods.second.away == null ? "-" : data.fixture.periods.second.away}</p>
                 </div>
             </div>
             <div className='publication'></div>

@@ -20,10 +20,10 @@ export const counterSlice = createSlice({
             const index = state.value.ids.indexOf(action.payload);
             if (index === -1) {
                 state.value.ids.push(action.payload);
-                console.log("ID ajouté:", action.payload);
+                // console.log("ID ajouté:", action.payload);
             } else {
                 state.value.ids.splice(index, 1);
-                console.log("ID supprimé:", action.payload);
+                // console.log("ID supprimé:", action.payload);
             }
         },
         decrement: (state, action) => {

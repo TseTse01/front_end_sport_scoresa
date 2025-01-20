@@ -1,0 +1,34 @@
+.CardHockeyContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $color-4;
+    margin-top: 10px;
+    padding-left: 10px;
+    .timerContainer{
+        display: flex;
+        align-items: flex-start;
+        width: 15%;
+        gap: 0.5vw;
+    }
+    .teamContainer {
+        width: 45%;
+        .team {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5vw;
+        }
+    }
+    .scoreContainer {
+        width: 50%;
+        padding-left: 20px;
+        .teamScore {
+            gap: 1.5vw;
+            display: flex;
+            align-self: start;
+        }
+    }
+    .publication {
+        width: 10%;
+    }
+}

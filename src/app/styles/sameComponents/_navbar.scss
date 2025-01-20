@@ -1,0 +1,20 @@
+.NavbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20vh;
+    width: 100%;
+    margin-bottom: 15px;
+    .star {
+        display: flex;
+    }
+    .favoris {
+        display: flex;
+        color: $color-3;
+        :hover {
+            color: $color-1;
+            transition: all 1s ease-out;
+        }
+    }
+
+}

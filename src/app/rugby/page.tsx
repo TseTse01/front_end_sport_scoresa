@@ -6,10 +6,11 @@ import RugbyHeaderCotainer from './components/RugbyHeaderContainer';
 
 const page = () => {
     return (
-        <div className='hockeyPage'
-            style={{ background: "blue" }}>
-            <Navbar />
-            <RugbyHeaderCotainer />
+        <div className='App'>
+            <div className='home rugby'>
+                <Navbar />
+                <RugbyHeaderCotainer />
+            </div>
         </div>
     );
 };

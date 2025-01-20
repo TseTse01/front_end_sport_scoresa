@@ -8,7 +8,6 @@ const Championship: React.FC<ChampionshipProps> = ({ data }) => {
     return (
         <div>
             <RugbyMatchContainer data={data} />
-            championshjip
         </div>
     );
 };

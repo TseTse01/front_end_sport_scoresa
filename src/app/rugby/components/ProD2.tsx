@@ -8,7 +8,6 @@ const ProD2: React.FC<ProD2Props> = ({ data }) => {
     return (
         <div>
             <RugbyMatchContainer data={data} />
-            ProD2
         </div>
     );
 };

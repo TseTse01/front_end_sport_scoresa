@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import NavbarLeagueContainer from "@/app/components/NavbarLeagueContainer";
 import axios from "axios";
-import { RugbyMatchData } from '../types/RugbyMatchData';
-import Top14 from './Top14';
-import ProD2 from './ProD2';
-import Didi10 from './Didi10';
-import Championship from './Championship';
-import EuropeChampionship from './EuropeChampionship';
-import WorldCup from './WorldCup';
+import { RugbyMatchData } from "../types/RugbyMatchData";
+import Top14 from "./Top14";
+import ProD2 from "./ProD2";
+import Didi10 from "./Didi10";
+import Championship from "./Championship";
+import EuropeChampionship from "./EuropeChampionship";
+import WorldCup from "./WorldCup";
 interface LeagueData {
     result: boolean;
     top14: RugbyMatchData[];
@@ -22,9 +22,15 @@ const RugbyLeagueContainer: React.FC = () => {
     const [top14, setTop14] = useState<RugbyMatchData[] | undefined>(undefined);
     const [proD2, setProD2] = useState<RugbyMatchData[] | undefined>(undefined);
     const [didi10, SetDidi10] = useState<RugbyMatchData[] | undefined>(undefined);
-    const [championship, setChampionship] = useState<RugbyMatchData[] | undefined>(undefined);
-    const [europechampionship, setEuropechampionship] = useState<RugbyMatchData[] | undefined>(undefined);
-    const [worldcup, setWorldcup] = useState<RugbyMatchData[] | undefined>(undefined);
+    const [championship, setChampionship] = useState<
+        RugbyMatchData[] | undefined
+    >(undefined);
+    const [europechampionship, setEuropechampionship] = useState<
+        RugbyMatchData[] | undefined
+    >(undefined);
+    const [worldcup, setWorldcup] = useState<RugbyMatchData[] | undefined>(
+        undefined
+    );
     const [isTodayMatch, setIsTodayMatch] = useState<boolean>(false);
     // Fonction pour obtenir la date actuelle
     function getCurrentDate(): string {
@@ -44,7 +50,9 @@ const RugbyLeagueContainer: React.FC = () => {
             // console.log(currentDate);
 
             try {
-                const response = await axios.get<LeagueData>(`http://localhost:3000/rugby/${currentDate}`);
+                const response = await axios.get<LeagueData>(
+                    `http://localhost:3000/rugby/${currentDate}`
+                );
                 const d = response.data;
                 // console.log(d);
 
@@ -56,7 +64,6 @@ const RugbyLeagueContainer: React.FC = () => {
                     setChampionship(d.championship);
                     setEuropechampionship(d.europechampionship);
                     setWorldcup(d.worldcup);
-
                 } else {
                     setIsTodayMatch(true);
                 }
@@ -77,18 +84,30 @@ const RugbyLeagueContainer: React.FC = () => {
     // console.log(dataSwedenShl, dataUsaNhl, dataFinlandLiga1, dataGermanyDel);
 
     return (
-        <div>
-            <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
-            {isTodayMatch ? NoMatch : (
-                <div>
-                    {top14 && <Top14 data={top14} />}
-                    {proD2 && <ProD2 data={proD2} />}
-                    {didi10 && <Didi10 data={didi10} />}
-                    {championship && <Championship data={championship} />}
-                    {europechampionship && <EuropeChampionship data={europechampionship} />}
-                    {worldcup && <WorldCup data={worldcup} />}
-                </div>
-            )}
+        <div className="leagueContainer Rugby-leagueContainer">
+            <div className="navbarLeague rugby-navbarLeague">
+                <NavbarLeagueContainer
+                    currentDate={currentDate}
+                    onDateChange={handleDateChange}
+                />
+            </div>
+            <div>
+
+                {isTodayMatch ? (
+                    NoMatch
+                ) : (
+                    <div className="football-container rugby-container">
+                        {top14 && <Top14 data={top14} />}
+                        {proD2 && <ProD2 data={proD2} />}
+                        {didi10 && <Didi10 data={didi10} />}
+                        {championship && <Championship data={championship} />}
+                        {europechampionship && (
+                            <EuropeChampionship data={europechampionship} />
+                        )}
+                        {worldcup && <WorldCup data={worldcup} />}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

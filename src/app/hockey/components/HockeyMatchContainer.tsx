@@ -12,7 +12,7 @@ const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
 
 
     return (
-        <div className="hockeyCardContainer">
+        <div className="navbarCardContainer hockeynavbarleague">
             <div className="items">
                 <div className="left">
                     <Star />
@@ -30,7 +30,7 @@ const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
                     <p>Strandings</p>
                 </div>
             </div>
-            <div className='cards'
+            <div className='cards hockeyCards'
             >{data.map((el, index) => <CardHockey data={el} key={index} />)}
             </div>
         </div>

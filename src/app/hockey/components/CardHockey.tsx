@@ -44,13 +44,15 @@ const CardHockey: React.FC<{ data: HockeyMatchData }> = ({ data }) => {
     }
 
     return (
-        <div className='hockeyCardContainer'>
-            <div className='hockeyStar'
-                onClick={handleRecoverId}
-            >
-                <Star />
+        <div className='CardHockeyContainer'>
+            <div className="timerContainer">
+                <div className='hockeyStar'
+                    onClick={handleRecoverId}
+                >
+                    <Star />
+                </div>
+                <div className='time'>{matchTime}</div>
             </div>
-            <div className='time'>{matchTime}</div>
             <div className='teamContainer'>
                 <div className='team'>
                     <p><Image src={data.teams.home.logo} width={20} height={20} alt={`flag of ${data.teams.home.name}`} /></p>
@@ -62,24 +64,24 @@ const CardHockey: React.FC<{ data: HockeyMatchData }> = ({ data }) => {
                 </div>
             </div>
             <div className='scoreContainer'>
-                <div className='teamHomeScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.home}</p>
-                    <p>{data.fixture.periods.first == null ? " " : data.fixture.periods.first.substr(0, 1)}</p>
-                    <p>{data.fixture.periods.second == null ? " " : data.fixture.periods.second.substr(0, 1)}</p>
-                    <p>{data.fixture.periods.third == null ? " " : data.fixture.periods.third.substr(0, 1)}</p>
-                    <p>{data.fixture.periods.overtime == null ? " " : data.fixture.periods.overtime.substr(0, 1)}</p>
-                    <p>{data.fixture.periods.penalties == null ? " " : data.fixture.periods.penalties.substr(0, 1)}</p>
+                    <p>{data.fixture.periods.first == null ? "-" : data.fixture.periods.first.substr(0, 1)}</p>
+                    <p>{data.fixture.periods.second == null ? "-" : data.fixture.periods.second.substr(0, 1)}</p>
+                    <p>{data.fixture.periods.third == null ? "-" : data.fixture.periods.third.substr(0, 1)}</p>
+                    <p>{data.fixture.periods.overtime == null ? "-" : data.fixture.periods.overtime.substr(0, 1)}</p>
+                    <p>{data.fixture.periods.penalties == null ? "-" : data.fixture.periods.penalties.substr(0, 1)}</p>
                 </div>
-                <div className='teamAwayScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.away}</p>
-                    <p>{data.fixture.periods.first == null ? " " : data.fixture.periods.first.substr(2, 3)}</p>
-                    <p>{data.fixture.periods.second == null ? " " : data.fixture.periods.second.substr(2, 3)}</p>
-                    <p>{data.fixture.periods.third == null ? " " : data.fixture.periods.third.substr(2, 3)}</p>
-                    <p>{data.fixture.periods.overtime == null ? " " : data.fixture.periods.overtime.substr(2, 3)}</p>
-                    <p>{data.fixture.periods.penalties == null ? " " : data.fixture.periods.penalties.substr(2, 3)}</p>
+                    <p>{data.fixture.periods.first == null ? "-" : data.fixture.periods.first.substr(2, 3)}</p>
+                    <p>{data.fixture.periods.second == null ? "-" : data.fixture.periods.second.substr(2, 3)}</p>
+                    <p>{data.fixture.periods.third == null ? "-" : data.fixture.periods.third.substr(2, 3)}</p>
+                    <p>{data.fixture.periods.overtime == null ? "-" : data.fixture.periods.overtime.substr(2, 3)}</p>
+                    <p>{data.fixture.periods.penalties == null ? "-" : data.fixture.periods.penalties.substr(2, 3)}</p>
                 </div>
             </div>
-            <div className='publication'></div>
+            <div className='publication'>ss</div>
         </div>
     );
 };

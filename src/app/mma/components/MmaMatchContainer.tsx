@@ -9,7 +9,7 @@ interface DataProps {
 }
 const MmaMatchContainer: React.FC<DataProps> = ({ data }) => {
 
-    console.log(data);
+
 
     return (
         <div className="hockeyCardContainer">

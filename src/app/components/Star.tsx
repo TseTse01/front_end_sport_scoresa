@@ -13,7 +13,8 @@ const Star: React.FC = () => {
   };
 
   return (
-    <div onClick={handleSubmit} className='star'>
+    <div onClick={handleSubmit} className='star'
+      style={{ cursor: "pointer", }}>
       {!isActive ? <IoStarOutline /> : <IoStar />}
     </div>
   );

@@ -1,0 +1,38 @@
+.navbarLeagueContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(60% + 15%);
+    margin: 20px 20px;
+    background-color: $color-4;
+    border-radius: 10px;
+    min-height: 40px;
+    .left {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        .navlink{
+            color: $color-3;
+            cursor: pointer;
+            &:hover {
+                color: $color-1;
+                transition: all 1s ease-out;
+            }
+        }
+    }
+    
+    .right {
+
+        input {
+            background-color: $color-4;
+            border: 2px solid $color-3;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 5px;
+            color: $color-3;
+        }
+        }
+   
+}

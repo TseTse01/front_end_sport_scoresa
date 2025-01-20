@@ -8,7 +8,6 @@ const Didi10: React.FC<Didi10Props> = ({ data }) => {
     return (
         <div>
             <RugbyMatchContainer data={data} />
-            didi10
         </div>
     );
 };

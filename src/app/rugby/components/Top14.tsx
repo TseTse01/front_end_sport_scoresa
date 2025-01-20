@@ -7,7 +7,6 @@ interface Top14Props {
 const Top14: React.FC<Top14Props> = ({ data }) => {
     return (
         <div>
-            top14
             <RugbyMatchContainer data={data} />
         </div>
     );

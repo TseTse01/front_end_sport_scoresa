@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <div className="NavbarContainer">
-            <div>
+            <div className="navlink star">
                 <Link href="/favoris" className="favoris">
                     <span>Favoris</span><Star /><span className="numberFavorisId">{fullIds.length}</span>
                 </Link>

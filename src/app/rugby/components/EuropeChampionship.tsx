@@ -5,7 +5,9 @@ interface EuropeChampionshipProps {
     data: RugbyMatchData[];
 }
 const EuropeChampionship: React.FC<EuropeChampionshipProps> = ({ data }) => {
+    console.log(data);
     return (
+
         <div>
             <RugbyMatchContainer data={data} />
         </div>

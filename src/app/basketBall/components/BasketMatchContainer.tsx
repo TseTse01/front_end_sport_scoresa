@@ -8,7 +8,7 @@ interface DataProps {
 }
 const BasketMatchContainer: React.FC<DataProps> = ({ data }) => {
     return (
-        <div className="hockeyCardContainer">
+        <div className="navbarCardContainer basket">
             <div className="items">
                 <div className="left">
                     <Star />

@@ -10,13 +10,13 @@ const RugbyMatchContainer: React.FC<DataProps> = ({ data }) => {
     console.log(data[0].country.flag);
 
     return (
-        <div className="hockeyCardContainer">
+        <div className="navbarCardContainer rugbyNavbarCardContainer">
             <div className="items">
                 <div className="left">
                     <Star />
                     {
-                        data[0].country.flag ? (<Image
-                            src={data[0].country.flag}
+                        data[0].league.logo ? (<Image
+                            src={data[0].league.logo}
                             width={30}
                             height={30}
                             alt={`flag of ${data[0].country.name}`}
@@ -31,7 +31,7 @@ const RugbyMatchContainer: React.FC<DataProps> = ({ data }) => {
                     <p>Strandings</p>
                 </div>
             </div>
-            <div className='cards'
+            <div className='cards cardRugby'
             >{data.map((el, index) => <CardRugby data={el} key={index} />)}
             </div>
         </div>

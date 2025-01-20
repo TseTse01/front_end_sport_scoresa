@@ -1,0 +1,29 @@
+.mmaCardContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $color-4;
+    margin-top: 10px;
+    padding-left: 10px;
+    .timerContainer {
+        display: flex;
+        gap: 0.5vw;
+        width: 25% !important;
+    }
+    .teamContainer {
+        width: 40%;
+        .team {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .scoreContainer {
+        width: 25%;
+        align-items: center;
+        .winnerContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

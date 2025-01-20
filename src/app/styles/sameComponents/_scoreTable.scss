@@ -1,0 +1,38 @@
+.football-container {
+  width: 95%;
+  margin: 20px auto;
+  .items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-4;
+    padding: 2px;
+    color: $color-3;
+    border-radius: 10px;
+    margin-top: 15px;
+    .left {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-left: 10px;
+      gap: 1vw;
+      // width: 50%;
+     
+        p {
+          padding-top: 15px;
+        }
+      
+    }
+    .right {
+      padding-right: 10px;
+      align-items: center;
+      cursor: pointer;
+      padding-top: 15px;
+      &:hover {
+        color: $color-1;
+        transition: all 1s ease-out;
+    }
+    }
+
+  }
+}

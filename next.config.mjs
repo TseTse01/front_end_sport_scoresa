@@ -2,10 +2,31 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["media.api-sports.io"], // Ajoute le domaine autorisé ici
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.api-sports.io",
+        pathname: "/**",
+      },
+    ],
   },
   webpack: (config) => {
-    config.cache = false; // Désactive le cache Webpack
+    // Désactive la mise en cache
+    config.cache = false;
+
+    // Ajoute une règle pour les fichiers SVG
+    config.module.rules.push({
+      test: /\.svg$/, // Détecte les fichiers SVG
+      use: [
+        {
+          loader: "@svgr/webpack", // Utilise svgr pour importer les SVG comme composants
+          options: {
+            svgo: true, // Optimisation SVG
+          },
+        },
+      ],
+    });
+
     return config;
   },
 };

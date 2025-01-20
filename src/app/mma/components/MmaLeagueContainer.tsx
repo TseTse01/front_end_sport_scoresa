@@ -9,6 +9,7 @@ import WomensBantamweight from './WomensBantamweight';
 import Middleweight from './Middleweight';
 import Heavyweight from './Heavyweight';
 import LightHeavyweight from './LightHeavyweight';
+import Championship from '../../rugby/components/Championship';
 interface LeagueData {
     result: boolean;
     Bantamweight: MmaMatchData[];
@@ -49,7 +50,7 @@ const MmaLeagueContainer = () => {
             try {
                 const response = await axios.get<LeagueData>(`http://localhost:3000/mma`);
                 const d = response.data;
-                console.log(d);
+                // console.log(d);
 
                 if (d.result) {
                     setIsTodayMatch(false);
@@ -81,19 +82,24 @@ const MmaLeagueContainer = () => {
     // console.log(dataSwedenShl, dataUsaNhl, dataFinlandLiga1, dataGermanyDel);
 
     return (
-        <div>
-            <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
-            {isTodayMatch ? NoMatch : (
-                <div>
-                    {bantamweight && <Bantamweight data={bantamweight} />}
-                    {flyweight && <Flyweight data={flyweight} />}
-                    {lightweight && <Lightweight data={lightweight} />}
-                    {womensBantamweight && <WomensBantamweight data={womensBantamweight} />}
-                    {middleweight && <Middleweight data={middleweight} />}
-                    {heavyweight && <Heavyweight data={heavyweight} />}
-                    {lightHeavyweight && <LightHeavyweight data={lightHeavyweight} />}
-                </div>
-            )}
+        <div className='leagueContainer mma-leagueCoontainer'>
+            <div className="navbarLeague rugby-navbarleague">
+                <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
+            </div>
+            <div>
+
+                {isTodayMatch ? NoMatch : (
+                    <div className='football-container mma '>
+                        {bantamweight && <Bantamweight data={bantamweight} />}
+                        {flyweight && <Flyweight data={flyweight} />}
+                        {lightweight && <Lightweight data={lightweight} />}
+                        {womensBantamweight && <WomensBantamweight data={womensBantamweight} />}
+                        {middleweight && <Middleweight data={middleweight} />}
+                        {heavyweight && <Heavyweight data={heavyweight} />}
+                        {lightHeavyweight && <LightHeavyweight data={lightHeavyweight} />}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

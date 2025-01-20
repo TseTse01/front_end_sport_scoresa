@@ -43,13 +43,15 @@ const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
     }
 
     return (
-        <div className='hockeyCardContainer'>
-            <div className='hockeyStar'
-                onClick={handleRecoverId}
-            >
-                <Star />
+        <div className='basketCardContainer'>
+            <div className="timerContainer">
+                <div className='Star'
+                    onClick={handleRecoverId}
+                >
+                    <Star />
+                </div>
+                <div className='time'>{matchTime}</div>
             </div>
-            <div className='time'>{matchTime}</div>
             <div className='teamContainer'>
                 <div className='team'>
                     <p><Image src={data.teams.home.logo} width={20} height={20} alt={`flag of ${data.teams.home.name}`} /></p>
@@ -61,24 +63,24 @@ const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
                 </div>
             </div>
             <div className='scoreContainer'>
-                <div className='teamHomeScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.home.total}</p>
-                    <p>{data.scores.home.quarter_1 == null ? " " : data.scores.home.quarter_1}</p>
-                    <p>{data.scores.home.quarter_2 == null ? " " : data.scores.home.quarter_2}</p>
-                    <p>{data.scores.home.quarter_3 == null ? " " : data.scores.home.quarter_3}</p>
-                    <p>{data.scores.home.quarter_4 == null ? " " : data.scores.home.quarter_4}</p>
-                    <p>{data.scores.home.over_time == null ? " " : data.scores.home.over_time}</p>
+                    <p>{data.scores.home.quarter_1 == null ? "-" : data.scores.home.quarter_1}</p>
+                    <p>{data.scores.home.quarter_2 == null ? "-" : data.scores.home.quarter_2}</p>
+                    <p>{data.scores.home.quarter_3 == null ? "-" : data.scores.home.quarter_3}</p>
+                    <p>{data.scores.home.quarter_4 == null ? "-" : data.scores.home.quarter_4}</p>
+                    <p>{data.scores.home.over_time == null ? "-" : data.scores.home.over_time}</p>
                 </div>
-                <div className='teamAwayScore'>
+                <div className='teamScore'>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.scores.away.total}</p>
-                    <p>{data.scores.away.quarter_1 == null ? " " : data.scores.away.quarter_1}</p>
-                    <p>{data.scores.away.quarter_2 == null ? " " : data.scores.away.quarter_2}</p>
-                    <p>{data.scores.away.quarter_3 == null ? " " : data.scores.away.quarter_3}</p>
-                    <p>{data.scores.away.quarter_4 == null ? " " : data.scores.away.quarter_4}</p>
-                    <p>{data.scores.away.over_time == null ? " " : data.scores.away.over_time}</p>
+                    <p>{data.scores.away.quarter_1 == null ? "-" : data.scores.away.quarter_1}</p>
+                    <p>{data.scores.away.quarter_2 == null ? "-" : data.scores.away.quarter_2}</p>
+                    <p>{data.scores.away.quarter_3 == null ? "-" : data.scores.away.quarter_3}</p>
+                    <p>{data.scores.away.quarter_4 == null ? "-" : data.scores.away.quarter_4}</p>
+                    <p>{data.scores.away.over_time == null ? "-" : data.scores.away.over_time}</p>
                 </div>
             </div>
-            <div className='publication'></div>
+            <div className='publicationContainer'>sss</div>
         </div>
     );
 };

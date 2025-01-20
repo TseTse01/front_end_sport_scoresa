@@ -1,0 +1,42 @@
+.rugbyCardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid $color-4;
+    margin-top: 10px;
+    padding-left: 10px;
+    .left {
+        display: flex;
+        gap: 0.5vw;
+        width: 25% !important;
+    }
+    .teamContainer {
+        width: 30%;
+        gap: 0.5vw;
+        .team {
+            gap: 5px;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+        }
+    }
+    .scoreContainer {
+        width: 30%;
+        padding-left: 15px;
+        .teamScore {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+        }
+    }
+    .publication {
+        width: 10%;
+    }
+}
+
+.rugbyNavbarCardContainer {
+    .left {
+        width: 50%;
+    }
+}

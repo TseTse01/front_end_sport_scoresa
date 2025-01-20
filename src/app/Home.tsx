@@ -4,11 +4,9 @@ import HeaderContainer from "./components/HeaderContainer"
 
 const Home = () => {
     return (
-        <div className="appContainer">
-            <div className="home">
-                <Navbar />
-                <HeaderContainer />
-            </div>
+        <div className="home football">
+            <Navbar />
+            <HeaderContainer />
         </div>
     );
 };

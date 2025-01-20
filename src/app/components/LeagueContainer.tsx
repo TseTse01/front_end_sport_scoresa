@@ -53,7 +53,7 @@ const LeagueContainer: React.FC = () => {
       try {
         const response = await axios.get<LeagueData>(`http://localhost:3000/matchToday/${currentDate}`);
         const d = response.data;
-        console.log(d);
+        // console.log(d);
 
         if (d.result) {
           setIsTodayMatch(false);
@@ -83,17 +83,21 @@ const LeagueContainer: React.FC = () => {
 
   return (
     <div className="leagueContainer">
-      <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
-      {isTodayMatch ? NoMatch : (
-        <div className="football-container">
-          {dataPremierLeague && <EnglandContainer data={dataPremierLeague} />}
-          {dataBundesLiga && <AllemagneContainer data={dataBundesLiga} />}
-          {dataLaLiga && <EspagneContainer data={dataLaLiga} />}
-          {dataLigue1 && <FranceContainer data={dataLigue1} />}
-          {dataErovnuliLiga && <GeorgiaContainer data={dataErovnuliLiga} />}
-          {dataSerieA && <ItalyContainer data={dataSerieA} />}
-        </div>
-      )}
+      <div className="navbarLeague">
+        <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
+      </div>
+      <div >
+        {isTodayMatch ? NoMatch : (
+          <div className="football-container">
+            {dataPremierLeague && <EnglandContainer data={dataPremierLeague} />}
+            {dataBundesLiga && <AllemagneContainer data={dataBundesLiga} />}
+            {dataLaLiga && <EspagneContainer data={dataLaLiga} />}
+            {dataLigue1 && <FranceContainer data={dataLigue1} />}
+            {dataErovnuliLiga && <GeorgiaContainer data={dataErovnuliLiga} />}
+            {dataSerieA && <ItalyContainer data={dataSerieA} />}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

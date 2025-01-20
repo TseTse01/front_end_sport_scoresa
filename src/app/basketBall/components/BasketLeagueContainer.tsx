@@ -10,6 +10,7 @@ import LegaA from './LegaA';
 import Lnb from './Lnb';
 import Nba from './Nba';
 import Eurocup from "./EuroCup";
+import EuroCup from './EuroCup';
 
 
 
@@ -88,19 +89,25 @@ const BasketLeagueContainer: React.FC = () => {
     // console.log(dataSwedenShl, dataUsaNhl, dataFinlandLiga1, dataGermanyDel);
 
     return (
-        <div>
-            <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
-            {isTodayMatch ? NoMatch : (
-                <div>
-                    {acb && <Acb data={acb} />}
-                    {euroBasket && <EuroBasket data={euroBasket} />}
-                    {EuroCup && <Eurocup data={EuroCup} />}
-                    {/* {euroLeague && <EuroLeague data={euroLeague} />} */}
-                    {legaA && <LegaA data={legaA} />}
-                    {lnb && <Lnb data={lnb} />}
-                    {nba && <Nba data={nba} />}
-                </div>
-            )}
+        <div className='leagueContainer basketLeagueContainer'>
+            <div className="navbarLeague basketnavbarleague">
+
+                <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
+            </div>
+            <div>
+
+                {isTodayMatch ? NoMatch : (
+                    <div className='football-container basket'>
+                        {acb && <Acb data={acb} />}
+                        {euroBasket && <EuroBasket data={euroBasket} />}
+                        {euroCup && <EuroCup data={euroCup} />}
+                        {euroLeague && <EuroLeague data={euroLeague} />}
+                        {legaA && <LegaA data={legaA} />}
+                        {lnb && <Lnb data={lnb} />}
+                        {nba && <Nba data={nba} />}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

@@ -1,0 +1,35 @@
+.basketCardContainer {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid $color-4;
+    margin-top: 10px;
+    gap: 1vw;
+    .timerContainer {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+    }
+    .teamContainer {
+        width: 30%;
+       .team {
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+       }
+    }
+    .scoreContainer {
+        width: 30%;
+        .teamScore {
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+        }
+    }
+    .publicationContainer {
+        width: 10%;
+    }
+
+}

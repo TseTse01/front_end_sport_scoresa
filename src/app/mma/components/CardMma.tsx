@@ -28,13 +28,14 @@ const CardMma: React.FC<{ data: MmaMatchData }> = ({ data }) => {
         } else {
             return;
         }
-        if (data.fighters.first.winner) {
-            setWinner("winner")
-        } else if (data.fighters.second.winner) {
-            setWinner("winner")
-        } else {
-            setWinner("0")
-        }
+
+        // if (data.fighters.first.winner) {
+        //     setWinner("winner")
+        // } else if (data.fighters.second.winner) {
+        //     setWinner("winner")
+        // } else {
+        //     setWinner("-")
+        // }
     }, [data.fixture.timestamp, data.status.short]);
 
     const handleRecoverId = () => {
@@ -44,18 +45,20 @@ const CardMma: React.FC<{ data: MmaMatchData }> = ({ data }) => {
     };
 
     return (
-        <div className="hockeyCardContainer">
-            <div className="hockeyStar" onClick={handleRecoverId}>
-                <Star />
+        <div className="mmaCardContainer">
+            <div className="timerContainer">
+                <div className="Star" onClick={handleRecoverId}>
+                    <Star />
+                </div>
+                <div className="time">{matchTime}</div>
             </div>
-            <div className="time">{matchTime}</div>
             <div className="teamContainer">
                 <div className="team">
                     <p>
                         <Image
                             src={data.fighters.first.logo}
-                            width={20}
-                            height={20}
+                            width={30}
+                            height={30}
                             alt={`flag of ${data.fighters.first.name}`}
                         />
                     </p>
@@ -74,8 +77,10 @@ const CardMma: React.FC<{ data: MmaMatchData }> = ({ data }) => {
                 </div>
             </div>
             <div className="scoreContainer">
-                <p className="home">{winner}</p>
-                <p className="away">{winner}</p>
+                <div className="winnerContainer">
+                    <p className="home">{data.fighters.first.winner ? "Winner" : "-"}</p>
+                    <p className="home">{data.fighters.second.winner ? "Winner" : "-"}</p>
+                </div>
             </div>
         </div>
     );
