@@ -20,8 +20,14 @@ $color-6: #173838;
 .home  {
   width: 80%;
   margin: 0 auto;
+  @media screen and (max-width: 750px) {
+    width: 95%;
+    margin: 0 auto;
 }
-
+}
+.live {
+  color: rgba(197, 12, 12, 0.63);
+}
 
     //   @font-face {
 //     font-family: "PlayfairDisplayRegular";

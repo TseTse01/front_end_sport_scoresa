@@ -1,16 +1,39 @@
-.navbarLeagueContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: calc(60% + 15%);
-    margin: 20px 20px;
-    background-color: $color-4;
-    border-radius: 10px;
-    min-height: 40px;
+.navbarLeague {
+    padding-left: 10px;
+    .navbarLeagueContainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        margin: 20px 20px;
+        background-color: $color-4;
+        border-radius: 10px;
+        min-height: 40px;
+        @media screen and (max-width: 1560px) {
+            width: 60%;
+        
+      }
+    @media screen and (max-width: 1250px) {
+        width: 80%;
+        
+    }
+    @media screen and (max-width: 750px) {
+        width: 95%;
+margin: 20px auto;        
+    }
+   
     .left {
         display: flex;
         width: 50%;
         justify-content: space-between;
+        @media screen and (max-width: 1150px) {
+            width: 55%;
+            
+        }
+        @media screen and (max-width: 750px) {
+            width: 65%;
+            
+        }
         .navlink{
             color: $color-3;
             cursor: pointer;
@@ -22,7 +45,7 @@
     }
     
     .right {
-
+        
         input {
             background-color: $color-4;
             border: 2px solid $color-3;
@@ -32,7 +55,11 @@
             padding-left: 5px;
             padding-right: 5px;
             color: $color-3;
-        }
+            @media screen and (max-width: 650px) {
+                width: 120px;
+              }
+            }
         }
    
+}
 }

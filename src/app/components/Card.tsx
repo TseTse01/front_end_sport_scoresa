@@ -6,6 +6,7 @@ import { recoverIds } from '../GlobalRedux/Features/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
+    const [islive, setIsLive] = useState<boolean>(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,7 +27,9 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             // match live
         } else if (data.fixture.status.short === "LIVE" || data.fixture.status.short === '1H') {
             setMatchTime(`${data.fixture.status.elapsed} mins`);
+            setIsLive(true)
         } else if (data.fixture.status.short === "HT") {
+            setIsLive(true)
             setMatchTime("Halftime")
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elapsed]);
@@ -43,7 +46,7 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             >
                 <Star />
                 <div className='starAndTimeContainer'>
-                    <p className='watch'>{matchTime}</p>
+                    <p className={islive ? 'watch live' : "watch"}>{matchTime}</p>
                 </div>
             </div>
             <div className='center'>
@@ -51,7 +54,7 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
                     <p><Image src={data.teams.home.logo} width={30} height={30} alt={`flag of ${data.teams.home.name}`} /></p>
                     <p>{data.teams.home.name}</p>
                 </div>
-                <div className='score'>
+                <div className={islive ? 'score live' : 'score'}>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.goals.away}</p>
                     <p>:</p>
                     <p>{data.fixture.status.short === "NS" ? "0" : data.goals.home}</p>
@@ -64,7 +67,7 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             <div className='right'>
                 sss
             </div>
-        </div>
+        </div >
     );
 };
 

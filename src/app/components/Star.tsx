@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { IoStarOutline, IoStar } from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
 
 // Ajout du typage pour un composant fonctionnel
 const Star: React.FC = () => {
@@ -15,7 +16,7 @@ const Star: React.FC = () => {
   return (
     <div onClick={handleSubmit} className='star'
       style={{ cursor: "pointer", }}>
-      {!isActive ? <IoStarOutline /> : <IoStar />}
+      {!isActive ? <IoStarOutline /> : <FaStar style={{ color: "#ffe500" }} />}
     </div>
   );
 };
