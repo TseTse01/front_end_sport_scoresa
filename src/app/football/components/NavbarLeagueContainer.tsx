@@ -17,9 +17,8 @@ const NavbarLeagueContainer: React.FC<NavbarLeagueContainerProps> = ({ currentDa
             </div>
             <div className='right'>
                 <input
-                    type="date"
-                    value={currentDate}
-                    onChange={(e) => onDateChange(e.target.value)} // Appel de la fonction avec la nouvelle valeur
+                    type="date" value={currentDate}
+                    onChange={(e) => onDateChange(e.target.value)}
                 />
             </div>
         </div>

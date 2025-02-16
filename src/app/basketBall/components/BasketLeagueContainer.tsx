@@ -1,16 +1,15 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import NavbarLeagueContainer from "@/app/components/NavbarLeagueContainer";
+import NavbarLeagueContainer from "@/app/football/components/NavbarLeagueContainer";
 import axios from "axios";
 import { BasketMatchData } from '../types/BasketMatchData';
 import Acb from './Acb';
 import EuroBasket from './EuroBasket';
-import EuroLeague from './EuroLeague';
 import LegaA from './LegaA';
 import Lnb from './Lnb';
 import Nba from './Nba';
-import Eurocup from "./EuroCup";
 import EuroCup from './EuroCup';
+import EuroLeague from './EuroLeague';
 
 
 
@@ -60,7 +59,9 @@ const BasketLeagueContainer: React.FC = () => {
                 const d = response.data;
                 // console.log(d);
 
+                console.log(d.euroLeague);
                 if (d.result) {
+
                     setIsTodayMatch(false);
                     setAcb(d.acb);
                     setEuroBasket(d.euroBasket);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BasketMatchData } from '../types/BasketMatchData';
-import Star from '@/app/components/Star';
+import Star from '@/app/football/components/Star';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
@@ -30,6 +30,8 @@ const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
             setMatchTime(`${data.fixture.status.elepsed} mins`);
         } else if (data.fixture.status.short === "HT") {
             setMatchTime("Halftime")
+        } else {
+            setMatchTime(`${data.fixture.status.elepsed} mins`);
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elepsed]);
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavbarLeagueContainer from "@/app/components/NavbarLeagueContainer";
+import NavbarLeagueContainer from "@/app/football/components/NavbarLeagueContainer";
 import axios from "axios";
 import { RugbyMatchData } from "../types/RugbyMatchData";
 import Top14 from "./Top14";

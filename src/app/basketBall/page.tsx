@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../football/components/Navbar';
 import BasketballHeaderContainer from './components/BasketballHeaderContainer';
 
 const page = () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import NavbarLeagueContainer from "@/app/components/NavbarLeagueContainer";
+import NavbarLeagueContainer from "@/app/football/components/NavbarLeagueContainer";
 import CzechExtraliga from "./CzechExtraliga";
 import FinlandLiga1 from "./FinlandLiga1";
 import GermanyDel from "./GermanyDel";

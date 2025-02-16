@@ -48,6 +48,9 @@
                 background-image: url("/flag/esFlag.svg");
                 @include flag-style;
             }
+            a {
+                color: $color-3;
+            }
         }
     }
 }

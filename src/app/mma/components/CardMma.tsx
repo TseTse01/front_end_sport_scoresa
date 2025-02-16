@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MmaMatchData } from "../types/MmaMatchData";
-import Star from "@/app/components/Star";
+import Star from "@/app/football/components/Star";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { recoverIds } from "@/app/GlobalRedux/Features/counter/counterSlice";

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Star from "@/app/components/Star";
+import Star from "@/app/football/components/Star";
 import { MmaMatchData } from "../types/MmaMatchData";
 import CardMma from "./CardMma";
 // import { Ufc } from '../public/Ufc.svg'

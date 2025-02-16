@@ -1,6 +1,6 @@
 "use client";
 
-import Home from "./Home";
+import Home from "./football/Home";
 
 
 export default function App() {

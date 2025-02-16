@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Star from "@/app/components/Star";
+import Star from "@/app/football/components/Star";
 import { HockeyMatchData } from "../types/HockeyMatchData";
 import CardHockey from "./CardHockey";
 interface DataProps {

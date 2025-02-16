@@ -13,3 +13,5 @@ const LegaA: React.FC<LegaAProps> = ({ data }) => {
 };
 
 export default LegaA;
+
+

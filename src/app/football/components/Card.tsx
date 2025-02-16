@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Star from './Star';
 import Image from 'next/image';
 import { MatchData } from '../types/MatchData';
-import { recoverIds } from '../GlobalRedux/Features/counter/counterSlice';
+import { recoverIds } from '../../GlobalRedux/Features/counter/counterSlice';
 import { useDispatch } from 'react-redux';
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");

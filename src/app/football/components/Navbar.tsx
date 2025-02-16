@@ -1,7 +1,7 @@
 import Star from "./Star";
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
-import { RootState } from '../GlobalRedux/store';
+import { RootState } from '../../GlobalRedux/store';
 
 const Navbar = () => {
     const fullIds = useSelector((state: RootState) => state.counter.value.ids)

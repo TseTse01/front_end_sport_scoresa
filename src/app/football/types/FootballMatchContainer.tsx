@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Star from '../components/Star';
 import Card from '../components/Card';
 import { MatchData } from './MatchData';
-import { recoverIds } from "../GlobalRedux/Features/counter/counterSlice"
+import { recoverIds } from "../../GlobalRedux/Features/counter/counterSlice"
 import { useDispatch } from 'react-redux';
 interface DataProps {
     data: MatchData[];
@@ -13,7 +13,11 @@ const FootballMatchContainer: React.FC<DataProps> = ({ data }) => {
     const handleRecoverId = () => {
         data.map((el) => {
             dispatch(recoverIds(el.fixture.id))
+            console.log(el.fixture.id);
+
         })
+        console.log("ss");
+
     }
     return (
         <div className="navbarCardContainer"
