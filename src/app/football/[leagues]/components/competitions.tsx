@@ -1,13 +1,19 @@
 import Link from "next/link";
-function Competitions() {
-    // const router = useRouter()
+import { idsLeague } from '../idsLeague';
+interface propsIdsAndName {
+    dataLeaguesId: idsLeague;
+}
+
+const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
+    console.log(dataLeaguesId);
+
     return (
         <div className="footCompetitionsContainer">
             <div className="competitions">
                 <h6>
-                    <Link href="/football/england">Premier league</Link>
+                    <Link href="/football/England">{dataLeaguesId.leaguename}</Link>
                 </h6>
-                <h6>
+                {/* <h6>
                     <Link href="/football/france">Ligue 1</Link>
                 </h6>
                 <h6>
@@ -21,7 +27,7 @@ function Competitions() {
                 </h6>
                 <h6>
                     <Link href="/football/espagne">La liga</Link>
-                </h6>
+                </h6> */}
             </div>
         </div>
     );

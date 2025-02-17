@@ -72,11 +72,11 @@ const LeagueContainer: React.FC = () => {
       }
     };
 
-    fetchData(); // Appel API à chaque changement de date
-  }, [currentDate]); // Se déclenche à chaque changement de `currentDate`
+    fetchData();
+  }, [currentDate]);
 
   useEffect(() => {
-    // Cette ligne devient redondante et peut être supprimée
+
     setCurrentDate(getCurrentDate());
   }, []);
   const NoMatch = <div>haliludia</div>;

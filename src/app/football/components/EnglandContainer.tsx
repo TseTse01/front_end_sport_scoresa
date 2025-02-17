@@ -4,7 +4,7 @@ import FootballMatchContainer from "../types/FootballMatchContainer";
 
 
 interface EnglandContainerProps {
-  data: MatchData[];  // Le prop attendu
+  data: MatchData[];
 }
 
 const EnglandContainer: React.FC<EnglandContainerProps> = ({ data }) => {
