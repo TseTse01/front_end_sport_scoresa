@@ -11,12 +11,14 @@ interface propsIdsAndName {
 
 const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     return (
-        <div className='leagueContainerDynamic'>
-            <NavbarLeague data={dataLeaguesId[0]} />
-            <TodayMatch />
-            <Scheduled />
-            <LatestScore />
-            <Standings />
+        <div className='matchsContainer'>
+            <div className="leagueContainer">
+                <NavbarLeague data={dataLeaguesId[0]} />
+                <TodayMatch />
+                <Scheduled />
+                <LatestScore />
+                <Standings />
+            </div>
         </div>
     );
 };

@@ -4,13 +4,7 @@ $color-3: #617178;
 $color-4: #021218;
 $color-5: #7ca438;
 $color-6: #173838;
-@mixin flag-style {
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  margin-top: 5px;
-}
+
 
 * {
     margin: 0;
@@ -34,17 +28,9 @@ $color-6: #173838;
 .live {
   color: rgba(197, 12, 12, 0.63);
 }
-.svgball {
-  background-image: url("/ball_football.svg");
-                @include flag-style;
 
-}
-.svgflash {
-  background-image: url("/chevron_right.svg");
-                @include flag-style;
-                width: 30px;
-  height: 30px;
-                // background-color: #7ca438;
+.leaguesLeft {
+  width: 15%;
 }
 
     //   @font-face {

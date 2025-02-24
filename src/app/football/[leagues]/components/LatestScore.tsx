@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import { propsMatchData } from '../propsMatchData';
+import FootballLeagueMatch from './FootballLeagueMatch';
+const LatestScore: React.FC = () => {
+    const [leagueId, setLeagueId] = useState<string>("697");
+    const [dataLatestMatchs, setDataLatestMatchs] = useState<propsMatchData[] | undefined>(undefined);
+    useEffect(() => {
+        const fetchData = async () => {
 
-const LatestScore = () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/latestMatch/${leagueId}`);
+                const d = response.data;
+                if (d.reslut) {
+                    setDataLatestMatchs(d.matches)
+                }
+            } catch (error) {
+                console.error("Erreur lors de la récupération des données:", error);
+            }
+        };
+
+        fetchData();
+    }, [leagueId])
     return (
         <div className='matchContainer'>
-            <div>
-                <h3>Latest Scores</h3>
-            </div>
+            <FootballLeagueMatch data={dataLatestMatchs} />
             <div className='matches'></div>
         </div>
     );

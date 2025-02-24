@@ -5,7 +5,7 @@ interface DynamicImageProps {
     className?: string;
 }
 const DynamicImage: React.FC<DynamicImageProps> = ({ src, alt, className }) => {
-    return <Image src={src} alt={alt} className={className} />;
+    return <Image src={src} alt={alt} className={className} width={30} height={30} />;
 };
 
 export default DynamicImage;

@@ -9,50 +9,59 @@ import axios from "axios";
 import { idsLeague } from './idsLeague';
 import Navbar from '../components/Navbar';
 
-const page = () => {
+const Page = () => {
     const [leaguesIds, setLeaguesIds] = useState<idsLeague[]>([]);
     const [messageError, setMessageError] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
     const pathname = usePathname();
-    // console.log(pathname + "here");
     const testId = pathname.split("/").pop();
-    // console.log(testId);
+
     useEffect(() => {
-
         const fetchData = async () => {
-
+            setLoading(true);
             try {
                 const response = await axios.get(`http://localhost:3000/leagues/${testId}`);
                 const d = response.data;
                 console.log(d);
 
                 if (d.result && d.leaguesData.length > 0) {
-                    setLeaguesIds(d.leaguesData)
+                    setLeaguesIds(d.leaguesData);
                 } else {
-                    setMessageError(true)
-                    console.log("array vides");
-
+                    setMessageError(true);
+                    console.log("array vide");
                 }
-
-
             } catch (error) {
                 console.error("Erreur lors de la récupération des données:", error);
+                setMessageError(true);
+            } finally {
+                setLoading(false);
             }
         };
 
-        fetchData();
+        if (testId) fetchData();
     }, [testId]);
-    const NoMatch = <div>haliludia</div>
+
+    if (loading) return <div>Loading...</div>;
+    if (messageError) return <div>Erreur lors du chargement des données.</div>;
 
     return (
         <div className="App">
             <div className="home football">
                 <Navbar />
-                <div className='headerCintainer'>
-                    {leaguesIds && leaguesIds.map((el, index) =>
-                        <Competitions dataLeaguesId={el} key={index} />
+                <div className='headerContainer'>
+                    {leaguesIds.length > 0 ? (
+                        <>
+                            <div className="competitionscontainer leaguesLeft">
+                                {leaguesIds.map((el, index) => (
+                                    <Competitions dataLeaguesId={el} key={index} />
+                                ))}
+                            </div>
+                            <LeagueContainerDynamic dataLeaguesId={leaguesIds} />
+                            <div className='matchTiketContainer'>ssooooss</div>
+                        </>
+                    ) : (
+                        <div>Aucune ligue trouvée</div>
                     )}
-                    <LeagueContainerDynamic dataLeaguesId={leaguesIds} />
-                    <div className='matchTiketContainer'>ssooooss</div>
                 </div>
                 <Footer />
             </div>
@@ -60,4 +69,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
