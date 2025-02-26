@@ -8,8 +8,7 @@ const SwedenShl: React.FC<SwedenShlProps> = ({ data }) => {
     // console.log("gttttt");
 
     return (
-        <div style={{ backgroundColor: "lightblue" }}>
-            ss
+        <div>
             <HockeyMatchContainer data={data} />
         </div>
     );

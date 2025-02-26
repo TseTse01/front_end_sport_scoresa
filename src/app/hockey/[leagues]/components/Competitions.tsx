@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { idsLeague } from '../idsLeague';
+import { idsLeague } from './idsLeague';
 import { replaceId } from "@/app/GlobalRedux/Features/counter/counterSlice";
 import { useDispatch } from 'react-redux';
 interface propsIdsAndName {
@@ -16,11 +16,12 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
 
     }
     return (
+
         <>
             <h6
                 onClick={handleRecoverId}
             >
-                <Link href="/football/England">{dataLeaguesId.leaguename}</Link>
+                <Link href="/hockey/France">{dataLeaguesId.leaguename}</Link>
             </h6>
         </>
 

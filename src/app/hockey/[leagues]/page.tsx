@@ -1,14 +1,12 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { usePathname } from "next/navigation";
-import Competitions from './components/competitions';
-import LeagueContainerDynamic from './components/LeagueContainerDynamic';
-import Footer from './components/Footer';
 import axios from "axios";
-import { idsLeague } from './idsLeague';
-import Navbar from '../components/Navbar';
-
-const Page = () => {
+import Competitions from './components/Competitions';
+import { idsLeague } from './components/idsLeague';
+import { usePathname } from "next/navigation";
+import Navbar from '@/app/football/components/Navbar';
+import LeagueContainerDynamic from './components/LeagueContainerDynamic'
+const page = () => {
     const [leaguesIds, setLeaguesIds] = useState<idsLeague[]>([]);
     const [messageError, setMessageError] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
@@ -19,9 +17,9 @@ const Page = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:3000/leagues/${testId}`);
+                const response = await axios.get(`http://localhost:3000/hockeyLeague/${testId}`);
                 const d = response.data;
-                // console.log(d);
+                // console.log(d, "la data dans la page hockey here maan");
 
                 if (d.result && d.leaguesData.length > 0) {
                     setLeaguesIds(d.leaguesData);
@@ -62,10 +60,10 @@ const Page = () => {
                         <div>Aucune ligue trouvée</div>
                     )}
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </div>
     );
 };
 
-export default Page;
+export default page;

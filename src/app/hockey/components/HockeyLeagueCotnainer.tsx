@@ -80,7 +80,7 @@ const HockeyLeagueCotnainer: React.FC = () => {
                 <NavbarLeagueContainer currentDate={currentDate} onDateChange={handleDateChange} />
             </div>
             {isTodayMatch ? NoMatch : (
-                <div className="football-container hockeyont">
+                <div className="football-container hockeyont league">
                     {dataSwedenShl && <SwedenShl data={dataSwedenShl} />}
                     {dataUsaNhl && <UsaNhl data={dataUsaNhl} />}
                     {dataFinlandLiga1 && <FinlandLiga1 data={dataFinlandLiga1} />}

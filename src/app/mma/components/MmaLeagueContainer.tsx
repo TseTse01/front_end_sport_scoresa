@@ -89,7 +89,7 @@ const MmaLeagueContainer = () => {
             <div>
 
                 {isTodayMatch ? NoMatch : (
-                    <div className='football-container mma '>
+                    <div className='football-container mma league'>
                         {bantamweight && <Bantamweight data={bantamweight} />}
                         {flyweight && <Flyweight data={flyweight} />}
                         {lightweight && <Lightweight data={lightweight} />}

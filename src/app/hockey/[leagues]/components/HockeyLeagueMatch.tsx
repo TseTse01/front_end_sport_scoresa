@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import DynamicImage from "./DynamicImage";
-import Star from "../../components/Star";
-import { Match } from '../propsMatchData';
+
+import { Match } from './propsMatchData';
+import DynamicImage from "@/app/football/[leagues]/components/DynamicImage";
 import Card from "./Card";
 
 interface LeagueData {
@@ -27,16 +27,16 @@ const FootballLeagueMatch: React.FC<LeagueData> = ({ data }) => {
         <div className="navbarCardContainer">
             <div className="items">
                 <div className="left">
-                    <Star />
+                    {/* <Star /> */}
                     <div className="image">
                         <DynamicImage
-                            src={data[0]?.league.flag}
-                            alt={`flag ${data && data[0]?.league.country}`}
+                            src={data[0]?.league.logo}
+                            alt={`flag ${data && data[0]?.country.name}`}
                         />
                     </div>
                     <div className="leagueName">
                         <p>
-                            {data && data[0]?.league.country} : {data && data[0]?.league.name}
+                            {data && data[0]?.country.name} : {data && data[0]?.league.name}
                         </p>
                     </div>
                 </div>

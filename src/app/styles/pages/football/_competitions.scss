@@ -1,56 +1,56 @@
 @mixin flag-style {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    margin-top: 5px;
-  }
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
 .competitionscontainer {
-    @media screen and (max-width: 1160px) {
-        width: 20%;        
-              }
-        
-    @media screen and (max-width: 950px) {
-       display: none;        
-              }
-        
-    .footCompetitionsContainer {
-        .competitions {
-            display: flex;
-            gap: 0.7vw;
-            color: $color-3;
-            :hover {
-                color: $color-1;
-                transition: all 1s ease-out;
-                cursor: pointer;
-            }
-            .flag-en {
-                background-image: url("/flag/enFlag.svg");
-                @include flag-style;
-            }
-            .flag-fr {
-                background-image: url("/flag/frFlag.svg");
-                @include flag-style;
-            }
-            .flag-it {
-                background-image: url("/flag/itFlag.svg");
-                @include flag-style;
-            }
-            .flag-ge {
-                background-image: url("/flag/geFlag.svg");
-                @include flag-style;
-            }
-            .flag-de {
-                background-image: url("/flag/deFlag.svg");
-                @include flag-style;
-            }
-            .flag-es {
-                background-image: url("/flag/esFlag.svg");
-                @include flag-style;
-            }
-            a {
-                color: $color-3;
-            }
-        }
+  @media screen and (max-width: 1160px) {
+    width: 20%;
+  }
+
+  @media screen and (max-width: 950px) {
+    display: none;
+  }
+
+  .footCompetitionsContainer {
+    .competitions {
+      display: flex;
+      gap: 0.7vw;
+      color: $color-3;
+      :hover {
+        color: $color-1;
+        transition: all 1s ease-out;
+        cursor: pointer;
+      }
+      .flag-en {
+        background-image: url("/flag/enFlag.svg");
+        @include flag-style;
+      }
+      .flag-fr {
+        background-image: url("/flag/frFlag.svg");
+        @include flag-style;
+      }
+      .flag-it {
+        background-image: url("/flag/itFlag.svg");
+        @include flag-style;
+      }
+      .flag-ge {
+        background-image: url("/flag/geFlag.svg");
+        @include flag-style;
+      }
+      .flag-de {
+        background-image: url("/flag/deFlag.svg");
+        @include flag-style;
+      }
+      .flag-es {
+        background-image: url("/flag/esFlag.svg");
+        @include flag-style;
+      }
+      a {
+        color: $color-3;
+      }
     }
+  }
 }

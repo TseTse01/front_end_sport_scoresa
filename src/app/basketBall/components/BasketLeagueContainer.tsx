@@ -98,7 +98,7 @@ const BasketLeagueContainer: React.FC = () => {
             <div>
 
                 {isTodayMatch ? NoMatch : (
-                    <div className='football-container basket'>
+                    <div className='football-container basket league'>
                         {acb && <Acb data={acb} />}
                         {euroBasket && <EuroBasket data={euroBasket} />}
                         {euroCup && <EuroCup data={euroCup} />}

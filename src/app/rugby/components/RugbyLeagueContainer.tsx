@@ -96,7 +96,7 @@ const RugbyLeagueContainer: React.FC = () => {
                 {isTodayMatch ? (
                     NoMatch
                 ) : (
-                    <div className="football-container rugby-container">
+                    <div className="football-container rugby-container league">
                         {top14 && <Top14 data={top14} />}
                         {proD2 && <ProD2 data={proD2} />}
                         {didi10 && <Didi10 data={didi10} />}

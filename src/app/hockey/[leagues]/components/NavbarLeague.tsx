@@ -1,6 +1,6 @@
 import React from 'react';
-import DynamicImage from './DynamicImage';
-import { Match } from '../propsMatchData';
+import DynamicImage from '../../../football/[leagues]/components/DynamicImage';
+import { Match } from './propsMatchData';
 interface LeagueData {
     data: Match;
 }
@@ -17,12 +17,12 @@ const NavbarLeague: React.FC<LeagueData> = ({ data }) => {
                 <p className='svgball'></p>
                 <span>FOOTBALL</span>
                 <p className='svgflash'></p>
-                <DynamicImage src={data.league.flag ? data.league.flag : ""} alt={data.league.country ? data.league.country + "flag" : "flag"} className={"svgFlag"} />
-                <span>{data.league.country.toUpperCase()}</span>
+                <DynamicImage src={data.country.flag ? data.country.flag : ""} alt={data.country.name ? data.country.name + "flag" : "flag"} className={"svgFlag"} />
+                <span>{data.country.name.toUpperCase()}</span>
             </div>
             <div className='flex'>
                 <div className='logoLeft'>
-                    <DynamicImage src={data.league.logo} alt={data.league.name ? data.league.name + "logo" : "logo of" + data.league.country} className={"svgologo"} />
+                    <DynamicImage src={data.league.logo} alt={data.league.name ? data.league.name + "logo" : "logo of" + data.country.name} className={"svgologo"} />
                 </div>
                 <div className="center">
                     <h5>{data.league.name}</h5>

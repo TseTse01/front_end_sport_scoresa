@@ -1,54 +1,54 @@
-
 .cardsFootball {
+  width: 100%;
+  .cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    .cardContainer {
+    border-bottom: 1px solid $color-4;
+    margin-top: 10px;
+    .left {
+      display: flex;
+      padding-left: 10px;
+      width: 20%;
+      gap: 0.2rem;
+      .star {
+        margin-right: 5px;
+      }
+    }
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 80%;
+      .teamContainer {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        border-bottom: 1px solid $color-4;
-        margin-top: 10px;
-        .left {
-            display: flex;
-            padding-left: 10px;
-            width: 20%;
-            .star {
-                margin-right: 5px;
-            }
+        flex: start;
+        width: 40%;
+        // padding-left: 35px;
+        @media screen and (max-width: 670px) {
+          padding-left: 0%;
         }
-        .center {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            width: 80%;
-            .teamContainer {
-                display: flex;
-                align-items: center;
-                flex: start;
-                width: 40%;
-                // padding-left: 35px;
-                @media screen and (max-width: 670px) {
-                    padding-left: 0%;
-                }
-                p {
-                    margin-right: 8px;
-                }
-            }
-            .score {
-                display: flex;
-                width: 20%;
-                p {
-                    margin-right: 8px;
-                }
-            }
+        p {
+          margin-right: 8px;
         }
-        .right {
-            width: 20%;
-            display: flex;
-            align-items: center;
-            @media screen and (max-width: 670px) {
-                display: none;
-            }
+      }
+      .score {
+        display: flex;
+        width: 20%;
+        p {
+          margin-right: 8px;
         }
+      }
     }
+    .right {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 670px) {
+        display: none;
+      }
+    }
+  }
 }

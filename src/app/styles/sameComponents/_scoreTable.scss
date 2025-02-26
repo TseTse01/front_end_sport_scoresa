@@ -1,5 +1,5 @@
 .football-container {
-  width: 95%;
+  width: 100%;
   margin: 20px auto;
   .items {
     display: flex;
@@ -17,11 +17,10 @@
       padding-left: 10px;
       gap: 1vw;
       // width: 50%;
-     
-        p {
-          padding-top: 15px;
-        }
-      
+
+      p {
+        padding-top: 15px;
+      }
     }
     .right {
       padding-right: 10px;
@@ -31,8 +30,7 @@
       &:hover {
         color: $color-1;
         transition: all 1s ease-out;
+      }
     }
-    }
-
   }
 }

@@ -1,0 +1,35 @@
+.league {
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #617178;
+}
+
+.showMoreButtons {
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.showMoreButtons button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.showMoreButtons button:hover {
+  background-color: #0056b3;
+}
+a {
+  color: $color-3;
+  :hover {
+    color: $color-1;
+    transition: all 1s ease-out;
+    cursor: pointer;
+  }
+}

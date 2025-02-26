@@ -88,7 +88,7 @@ const LeagueContainer: React.FC = () => {
       </div>
       <div >
         {isTodayMatch ? NoMatch : (
-          <div className="football-container">
+          <div className="football-container league">
             {dataPremierLeague && <EnglandContainer data={dataPremierLeague} />}
             {dataBundesLiga && <AllemagneContainer data={dataBundesLiga} />}
             {dataLaLiga && <EspagneContainer data={dataLaLiga} />}
