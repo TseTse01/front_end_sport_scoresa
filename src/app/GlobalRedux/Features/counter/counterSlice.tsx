@@ -29,11 +29,11 @@ export const counterSlice = createSlice({
         replaceId: (state, action) => {
             if (state.value.idsLeague.length > 0) {
                 state.value.idsLeague = [action.payload]; // Remplace l'ID existant
-                console.log(action.payload, "// Remplace l'ID existant", state.value.idsLeague.length);
+                // console.log(action.payload, "// Remplace l'ID existant", state.value.idsLeague.length);
 
             } else {
                 state.value.idsLeague.push(action.payload); // Ajoute l'ID s'il n'y a rien
-                console.log(action.payload, "Ajoute l'ID s'il n'y a rien", state.value.idsLeague.length);
+                // console.log(action.payload, "Ajoute l'ID s'il n'y a rien", state.value.idsLeague.length);
 
 
             }

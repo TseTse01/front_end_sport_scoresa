@@ -26,7 +26,7 @@ function Competitions() {
       </div>
       <div className="competitions">
         <p className="flag-es"></p>
-        <h6><Link href="/football/Espagne">La liga</Link></h6>
+        <h6><Link href="/football/Spain">La liga</Link></h6>
       </div>
     </div>
   );

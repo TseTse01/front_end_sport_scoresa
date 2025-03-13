@@ -29,6 +29,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
             try {
                 const response = await axios.get(`http://localhost:3000/latestMatchHockey/${idLeague.length > 0 ? idLeague[0].toString() : firstLeagueId}`);
                 const d = response.data;
+                // console.log(d, " of de");
 
 
                 if (d.result) {
@@ -51,7 +52,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
                 <TodayMatch />
                 <Scheduled />
                 {dataLatestMatchs && <LatestScore data={dataLatestMatchs} />}
-                <Standings />
+                {dataLatestMatchs && <Standings data={dataLatestMatchs[0]} />}
             </div>
         </div>
     );

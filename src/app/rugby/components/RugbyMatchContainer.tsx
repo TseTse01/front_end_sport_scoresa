@@ -7,7 +7,7 @@ interface DataProps {
     data: RugbyMatchData[];
 }
 const RugbyMatchContainer: React.FC<DataProps> = ({ data }) => {
-    console.log(data[0].country.flag);
+    // console.log(data[0].country.flag);
 
     return (
         <div className="navbarCardContainer rugbyNavbarCardContainer">

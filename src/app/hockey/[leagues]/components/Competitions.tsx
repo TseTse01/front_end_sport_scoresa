@@ -19,9 +19,10 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
 
         <>
             <h6
+                style={{ color: "blue" }}
                 onClick={handleRecoverId}
             >
-                <Link href="/hockey/France">{dataLeaguesId.leaguename}</Link>
+                {dataLeaguesId.leaguename}
             </h6>
         </>
 

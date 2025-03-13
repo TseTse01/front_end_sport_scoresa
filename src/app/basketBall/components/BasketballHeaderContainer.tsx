@@ -1,13 +1,12 @@
 import React from 'react';
 import BasketLeagueContainer from './BasketLeagueContainer';
+import Competitions from './Competitions';
 
 const BasketballHeaderContainer = () => {
     return (
         <div className='headerContainer'>
-            <div className='competitionscontainer'
-                style={{ color: "red" }}>
-                {/* <Competitions /> */}
-                soslan
+            <div className='competitionscontainer'>
+                <Competitions />
             </div>
             <div className='matchsContainer'>
                 <BasketLeagueContainer />

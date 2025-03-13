@@ -1,12 +1,13 @@
 import React from 'react';
 import MmaLeagueContainer from './MmaLeagueContainer';
+import Competitions from './Competitions';
 const MmaHeaderContainer = () => {
     return (
         <div className='headerContainer'>
             <div className='competitionscontainer'
                 style={{ color: "red" }}>
-                {/* <Competitions /> */}
-                soslan
+                <Competitions />
+
             </div>
             <div className='matchsContainer'>
                 <MmaLeagueContainer />

@@ -5,25 +5,24 @@ $color-4: #021218;
 $color-5: #7ca438;
 $color-6: #173838;
 
-
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none !important;
-    // border: 1px solid red;
-  }
-.App{
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  // border: 1px solid red;
+}
+.App {
   background: $color-4;
   min-height: 100vh;
   width: 100%;
 }
-.home  {
+.home {
   width: 80%;
   margin: 0 auto;
   @media screen and (max-width: 750px) {
     width: 95%;
     margin: 0 auto;
-}
+  }
 }
 .live {
   color: rgba(197, 12, 12, 0.63);
@@ -33,7 +32,7 @@ $color-6: #173838;
   width: 15%;
 }
 
-    //   @font-face {
+//   @font-face {
 //     font-family: "PlayfairDisplayRegular";
 //     src: local("PlayfairDisplayRegular"),
 //      url("../fonts/playfair_display/static/PlayfairDisplay-Regular.ttf") format("truetype");

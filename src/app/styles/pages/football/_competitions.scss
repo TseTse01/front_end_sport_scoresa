@@ -48,6 +48,27 @@
         background-image: url("/flag/esFlag.svg");
         @include flag-style;
       }
+      .flag-usa {
+        background-image: url("/flag/usaFlag.svg");
+        @include flag-style;
+      }
+      .flag-eu {
+        background-image: url("/flag/euFlag.svg");
+        @include flag-style;
+      }
+      .flag-fi {
+        background-image: url("/flag/fiFlag.svg");
+        @include flag-style;
+      }
+      .flag-sw {
+        background-image: url("/flag/swFlag.svg");
+        @include flag-style;
+      }
+      .flag-cz {
+        background-image: url("/flag/czFlag.svg");
+        @include flag-style;
+      }
+
       a {
         color: $color-3;
       }

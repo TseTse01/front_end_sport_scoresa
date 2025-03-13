@@ -10,12 +10,13 @@ const NavbarLeague: React.FC<LeagueData> = ({ data }) => {
         return `${season}-${season + 1}`;
     };
 
+    // console.log(data, "ee");
 
     return (
         <div className='navbarLeagueLeft'>
             <div className='flex flex1'>
                 <p className='svgball'></p>
-                <span>FOOTBALL</span>
+                <span>HOCKEY</span>
                 <p className='svgflash'></p>
                 <DynamicImage src={data.country.flag ? data.country.flag : ""} alt={data.country.name ? data.country.name + "flag" : "flag"} className={"svgFlag"} />
                 <span>{data.country.name.toUpperCase()}</span>

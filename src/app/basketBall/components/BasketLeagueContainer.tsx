@@ -59,7 +59,7 @@ const BasketLeagueContainer: React.FC = () => {
                 const d = response.data;
                 // console.log(d);
 
-                console.log(d.euroLeague);
+                // console.log(d.euroLeague);
                 if (d.result) {
 
                     setIsTodayMatch(false);
