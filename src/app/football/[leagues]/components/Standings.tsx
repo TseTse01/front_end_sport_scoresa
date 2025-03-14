@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { standingsProprs } from '../PropsStandings';
+import DynamicImage from './DynamicImage';
 interface leagueIdAndSeason {
     leagueId: number,
     leagueSeason: number,
@@ -20,9 +21,9 @@ const Standings: React.FC<leagueIdAndSeason> = ({ leagueId, leagueSeason }) => {
                 const d = response.data;
                 console.log(d, " si on recuperr qq chose dans standings");
 
-                // if (d.result) {
-                //     setDataStandings(d.matches);
-                // }
+                if (d.result) {
+                    setDataStandings(d.data);
+                }
 
 
             } catch (error) {
@@ -33,12 +34,45 @@ const Standings: React.FC<leagueIdAndSeason> = ({ leagueId, leagueSeason }) => {
         fetchData();
     }, [leagueId, leagueSeason]);
     return (
-        <div className='football-container league'>
-            <div>
-                <h3>Standings</h3>
-            </div>
-            <div className='matches'></div>
-
+        <div className="standings-container">
+            <h2>League Standings</h2>
+            <table className="standings-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Team</th>
+                        <th>MP</th>
+                        <th>W</th>
+                        <th>WO</th>
+                        <th>L</th>
+                        <th>LO</th>
+                        <th>G</th>
+                        <th>PTS</th>
+                        <th>FORM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dataStandings && dataStandings.map((team) => (
+                        <tr key={team.rank}>
+                            <td>{team.rank}</td>
+                            <td className="team-info">
+                                <DynamicImage src={team.team.logo} alt={`${team.team.name} + logo`} className='logoStandingsFoot' />
+                                {team.team.name}
+                            </td>
+                            <td>{team.all.played}</td>
+                            <td>{team.all.win}</td>
+                            <td>{team.all.draw}</td>
+                            {/* <td>{team.all.lose.total}</td> */}
+                            {/* <td>{team.games.lose_overtime.total}</td> */}
+                            <td>
+                                {team.all.goals.for}:{team.all.goals.against}
+                            </td>
+                            <td>{team.points}</td>
+                            <td>{team.form}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };

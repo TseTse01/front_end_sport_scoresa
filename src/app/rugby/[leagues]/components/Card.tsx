@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
 
 const Card: React.FC<{ data: rugbyleagueMatchProps }> = ({ data }) => {
-    console.log(data, 'data of card container in rugby');
+    // console.log(data, 'data of card container in rugby');
 
     const [matchTime, setMatchTime] = useState<string>("");
     const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const Card: React.FC<{ data: rugbyleagueMatchProps }> = ({ data }) => {
 
     const handleRecoverId = () => {
 
-        console.log(data.id);
+        // console.log(data.id);
         // dispatch(recoverIds(data.id)); 
 
     }

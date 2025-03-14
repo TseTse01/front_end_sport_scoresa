@@ -18,7 +18,7 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
         router.push(`/football/${dataLeaguesId.country}/`);
     };
 
-    console.log(dataLeaguesId, "dataliguesId");
+    // console.log(dataLeaguesId, "dataliguesId");
 
     return (
         <>

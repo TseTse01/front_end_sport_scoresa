@@ -48,7 +48,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({
 
         fetchData();
     }, [idLeague]);
-    // console.log(dataLatestMatchs && dataLatestMatchs[0]);
+    console.log(dataLatestMatchs && dataLatestMatchs[0]);
 
     return (
         <div className="matchsContainer">

@@ -16,8 +16,8 @@ interface propsIdsAndName {
 
 const RugbyleagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     const [dataLatestMatchs, setDataLatestMatchs] = useState<rugbyleagueMatchProps[] | undefined>(undefined);
-    const idLeague = useSelector((state: RootState) => state.counter.value.idsLeague)
     const firstLeagueId = dataLeaguesId[0].id.toString()
+    const idLeague = useSelector((state: RootState) => state.counter.value.idsLeague)
 
     useEffect(() => {
 
@@ -30,7 +30,7 @@ const RugbyleagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId 
 
 
                 if (d.result) {
-                    console.log(d.matches, "rugbyleaguedynamic maan ++");
+                    // console.log(d.matches, "rugbyleaguedynamic maan ++");
                     setDataLatestMatchs(d.matches)
                 }
             } catch (error) {
@@ -49,7 +49,7 @@ const RugbyleagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId 
                 <TodayMatch />
                 <Scheduled />
                 {dataLatestMatchs && <LatestScore data={dataLatestMatchs} />}
-                <Standings />
+                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0].league.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
             </div>
         </div>
     );

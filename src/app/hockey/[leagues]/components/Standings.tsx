@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Match } from './propsMatchData';
 import axios from "axios";
 import { standingProps } from '../props/standingsProps'
 interface LeagueData {
-    data: Match;
+    leagueId: string;
+    season: string
 }
-const Standings: React.FC<LeagueData> = ({ data }) => {
+const Standings: React.FC<LeagueData> = ({ leagueId, season }) => {
     const [dataStendings, setDataStendings] = useState<standingProps[] | undefined>(undefined);
-    const leagueId = data.league.id;
-    const season = data.league.season.toString();;
+    // const leagueId = data.league.id;
+    // const season = data.league.season.toString();
     // console.log(leagueId);
 
     useEffect(() => {

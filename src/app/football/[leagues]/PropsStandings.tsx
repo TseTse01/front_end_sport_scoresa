@@ -4,7 +4,7 @@ export interface standingsProprs {
     team: {
         id: number;
         name: string,
-        logo: String;
+        logo: string;
     },
     points: number;
     goalsDiff: number,
@@ -42,5 +42,5 @@ export interface standingsProprs {
             against: number,
         },
     },
-    update: string,
+    update: string
 }

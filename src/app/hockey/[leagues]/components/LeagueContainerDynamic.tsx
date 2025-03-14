@@ -52,7 +52,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
                 <TodayMatch />
                 <Scheduled />
                 {dataLatestMatchs && <LatestScore data={dataLatestMatchs} />}
-                {dataLatestMatchs && <Standings data={dataLatestMatchs[0]} />}
+                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0].league.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
             </div>
         </div>
     );

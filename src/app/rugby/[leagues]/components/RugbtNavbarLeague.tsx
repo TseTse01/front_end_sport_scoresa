@@ -13,7 +13,7 @@ const RugbtNavbarLeague: React.FC<LeagueData> = ({ data }) => {
         <div className='navbarLeagueLeft'>
             <div className='flex flex1'>
                 <p className='svgball'></p>
-                <span>BASKETBALL</span>
+                <span>RUGBY</span>
                 <p className='svgflash'></p>
                 <DynamicImage src={data.country.flag ? data.country.flag : ""} alt={data.league.name ? data.league.name + "flag" : "flag"} className={"svgFlag"} />
                 <span>{data.league.name.toUpperCase()}</span>

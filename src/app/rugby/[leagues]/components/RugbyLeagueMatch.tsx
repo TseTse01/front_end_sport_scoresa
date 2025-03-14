@@ -10,7 +10,7 @@ interface LeagueData {
 const RugbyLeagueMatch: React.FC<LeagueData> = ({ data }) => {
     const [visibleCount, setVisibleCount] = useState(10);
     const totalMatches = data?.length || 0;
-    console.log(data, "rugby league match ");
+    // console.log(data, "rugby league match ");
 
     // Fonction pour afficher 15 matchs de plus
     const handleShowMore = () => {

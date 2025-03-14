@@ -5,6 +5,8 @@ interface LeagueData {
     data: rugbyleagueMatchProps[];
 }
 const LatestScore: React.FC<LeagueData> = ({ data }) => {
+    // console.log(data, "this is latesscore rugby");
+
     return (
         <div className='football-container league'>
             <h3>Latest Scores</h3>
