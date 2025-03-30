@@ -3,13 +3,20 @@ import { BasketMatchData } from '../types/BasketMatchData';
 import Star from '@/app/football/components/Star';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
+import { basketballToggleFavorite } from '@/app/GlobalRedux/Features/counter/favoritesSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/GlobalRedux/store';
+
 
 
 const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
     // console.log(data);
     const [matchTime, setMatchTime] = useState<string>("");
     const dispatch = useDispatch();
+    const isFavorite = useSelector((state: RootState) =>
+        state.favorites.basketballMatches.some(match => match.fixture.id === data.fixture.id)
+    );
+
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
         const date = new Date(timestamp * 1000);
@@ -37,10 +44,9 @@ const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
 
 
 
-    const handleRecoverId = () => {
-        // envoyer Id dans redux 
-        // dispatch(recoverIds(data.fixture.id))
-        console.log(data.fixture.id);
+    const handleToggleFavorite = () => {
+        dispatch(basketballToggleFavorite(data))
+        console.log(data);
 
     }
 
@@ -48,9 +54,9 @@ const CardBasket: React.FC<{ data: BasketMatchData }> = ({ data }) => {
         <div className='basketCardContainer'>
             <div className="timerContainer">
                 <div className='Star'
-                    onClick={handleRecoverId}
+                    onClick={handleToggleFavorite}
                 >
-                    <Star />
+                    <Star isFavorite={isFavorite} />
                 </div>
                 <div className='time'>{matchTime}</div>
             </div>

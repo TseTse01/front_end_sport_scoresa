@@ -24,7 +24,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({
         (state: RootState) => state.counter.value.idsLeague
     );
     const firstLeagueId = dataLeaguesId[0].id.toString();
-    // console.log(dataLeaguesId[0].id.toString(), "dynamic");
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,7 +48,7 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({
 
         fetchData();
     }, [idLeague]);
-    console.log(dataLatestMatchs && dataLatestMatchs[0]);
+    // console.log(dataLatestMatchs && dataLatestMatchs[0]);
 
     return (
         <div className="matchsContainer">

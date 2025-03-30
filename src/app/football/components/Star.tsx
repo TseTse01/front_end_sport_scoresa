@@ -1,22 +1,16 @@
 "use client"
-import React, { useState } from 'react';
-import { IoStarOutline, IoStar } from "react-icons/io5";
+import React from 'react';
+import { IoStarOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 
-// Ajout du typage pour un composant fonctionnel
-const Star: React.FC = () => {
-  // Typage explicite de `useState` en tant que booléen
-  const [isActive, setIsActive] = useState<boolean>(false);
+interface StarProps {
+  isFavorite: boolean;
+}
 
-  // Pas de typage nécessaire pour `handleSubmit` car TypeScript peut l'inférer automatiquement
-  const handleSubmit = (): void => {
-    setIsActive(!isActive);
-  };
-
+const Star: React.FC<StarProps> = ({ isFavorite, }) => {
   return (
-    <div onClick={handleSubmit} className='star'
-      style={{ cursor: "pointer", }}>
-      {!isActive ? <IoStarOutline /> : <FaStar style={{ color: "#ffe500" }} />}
+    <div className='star' style={{ cursor: "pointer" }}>
+      {isFavorite ? <FaStar style={{ color: "#ffe500" }} /> : <IoStarOutline />}
     </div>
   );
 };

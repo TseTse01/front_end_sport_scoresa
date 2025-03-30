@@ -3,19 +3,35 @@ import Image from "next/image";
 import Star from "@/app/football/components/Star";
 import { HockeyMatchData } from "../types/HockeyMatchData";
 import CardHockey from "./CardHockey";
+import { useDispatch } from 'react-redux';
+import { hockeyToggleFavorite } from '@/app/GlobalRedux/Features/counter/favoritesSlice';
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/GlobalRedux/store";
+
+
 interface DataProps {
     data: HockeyMatchData[];
 }
 const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
-    // console.log(data);
-
-
+    const dispatch = useDispatch();
+    const isFavorite = useSelector((state: RootState) =>
+        state.favorites.hockeyMatches.some(match =>
+            data.some(el => el.fixture.id === match.fixture.id)
+        )
+    );
+    const handleRecoverId = () => {
+        data.map((el) => dispatch(hockeyToggleFavorite(el)))
+    }
 
     return (
         <div className="navbarCardContainer hockeynavbarleague">
             <div className="items">
                 <div className="left">
-                    <Star />
+                    <div className="star"
+                        onClick={handleRecoverId}
+                    >
+                        <Star isFavorite={isFavorite} />
+                    </div>
                     <Image
                         src={data[0].league.flag}
                         width={30}
@@ -23,7 +39,7 @@ const HockeyMatchContainer: React.FC<DataProps> = ({ data }) => {
                         alt={`flag ${data[0].league.flag}`}
                     />
                     <p>
-                        {data[0].league.country} : {data[0].league.name}
+                        {data[0]?.league?.country} : {data[0]?.league?.name}
                     </p>
                 </div>
                 <div className="right">

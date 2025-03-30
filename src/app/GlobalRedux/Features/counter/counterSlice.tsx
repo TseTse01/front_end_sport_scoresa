@@ -46,7 +46,3 @@ export const counterSlice = createSlice({
 
 export const { recoverIds, replaceId, decrement } = counterSlice.actions;
 export default counterSlice.reducer;
-
-// Tu peux utiliser replaceId comme ça :
-// dispatch(replaceId(123));
-// Ça va soit ajouter 123, soit remplacer l'ID existant ! 🚀

@@ -25,7 +25,7 @@ const Card: React.FC<{ data: Match }> = ({ data }) => {
     }, [data.fixture.timestamp]);
     // Dépendances qui déclenchent l'update
     const handleRecoverId = () => {
-        // envoyer Id dans redux 
+
         dispatch(recoverIds(data.fixture.id))
     }
     const formatDate = (dateString: string): string => {

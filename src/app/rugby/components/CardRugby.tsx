@@ -3,12 +3,17 @@ import { RugbyMatchData } from '../types/RugbyMatchData';
 import Star from '@/app/football/components/Star';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
-
+import { rugbyToggleFavorite } from '@/app/GlobalRedux/Features/counter/favoritesSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/GlobalRedux/store';
 
 const CardRugby: React.FC<{ data: RugbyMatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
     const dispatch = useDispatch();
+    const isFavorite = useSelector((state: RootState) =>
+        state.favorites.rugbyMatches.some(match => match.fixture.id === data.fixture.id)
+    );
+
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
         const date = new Date(timestamp * 1000);
@@ -32,19 +37,17 @@ const CardRugby: React.FC<{ data: RugbyMatchData }> = ({ data }) => {
 
 
 
-    const handleRecoverId = () => {
+    const handleToggleFavorite = () => {
         // envoyer Id dans redux 
-        // dispatch(recoverIds(data.fixture.id))
-        console.log(data.fixture.id);
-
+        dispatch(rugbyToggleFavorite(data))
     }
 
     return (
         <div className='rugbyCardContainer'>
             <div className='left'
-                onClick={handleRecoverId}
+                onClick={handleToggleFavorite}
             >
-                <Star />
+                <Star isFavorite={isFavorite} />
                 <div className='time'>{matchTime}</div>
             </div>
             <div className='teamContainer'>

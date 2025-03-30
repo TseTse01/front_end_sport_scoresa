@@ -3,12 +3,18 @@ import { MmaMatchData } from "../types/MmaMatchData";
 import Star from "@/app/football/components/Star";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { recoverIds } from "@/app/GlobalRedux/Features/counter/counterSlice";
+import { mmaToggleFavorite } from '@/app/GlobalRedux/Features/counter/favoritesSlice';
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/GlobalRedux/store";
 
 const CardMma: React.FC<{ data: MmaMatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
     const [winner, setWinner] = useState<string>("0");
     const dispatch = useDispatch();
+    const handleToggleFavorite = () => {
+        // envoyer Id dans redux
+        dispatch(mmaToggleFavorite(data));
+    };
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
         const date = new Date(timestamp * 1000);
@@ -38,17 +44,14 @@ const CardMma: React.FC<{ data: MmaMatchData }> = ({ data }) => {
         // }
     }, [data.fixture.timestamp, data.status.short]);
 
-    const handleRecoverId = () => {
-        // envoyer Id dans redux
-        // dispatch(recoverIds(data.fixture.id))
-        console.log(data.fixture.id);
-    };
-
+    const isFavorite = useSelector((state: RootState) =>
+        state.favorites.mmaMatches.some(match => match.fixture.id === data.fixture.id)
+    );
     return (
         <div className="mmaCardContainer">
             <div className="timerContainer">
-                <div className="Star" onClick={handleRecoverId}>
-                    <Star />
+                <div className="Star" onClick={handleToggleFavorite}>
+                    <Star isFavorite={isFavorite} />
                 </div>
                 <div className="time">{matchTime}</div>
             </div>

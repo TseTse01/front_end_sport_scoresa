@@ -7,12 +7,9 @@ interface propsIdsAndName {
 
 const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     const dispatch = useDispatch()
-    // console.log(dataLeaguesId);
+
     const handleRecoverId = () => {
         dispatch(replaceId(dataLeaguesId.id))
-        // console.log(dataLeaguesId.id, "id here");
-
-
     }
     return (
         <div>

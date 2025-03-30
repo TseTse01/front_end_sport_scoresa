@@ -3,7 +3,7 @@ import { rugbyleagueMatchProps } from '../props/RugbyLeagueMatchProps';
 import Star from '@/app/football/components/Star';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
+// import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
 
 const Card: React.FC<{ data: rugbyleagueMatchProps }> = ({ data }) => {
     // console.log(data, 'data of card container in rugby');

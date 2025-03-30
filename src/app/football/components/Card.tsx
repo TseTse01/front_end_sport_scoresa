@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { footballToggleFavorite } from '@/app/GlobalRedux/Features/counter/favoritesSlice';
+import { RootState } from '@/app/GlobalRedux/store';
 import Star from './Star';
 import Image from 'next/image';
 import { MatchData } from '../types/MatchData';
-import { recoverIds } from '../../GlobalRedux/Features/counter/counterSlice';
-import { useDispatch } from 'react-redux';
+import TvContainer from '@/app/sameComposant/TvContainer';
+
 const Card: React.FC<{ data: MatchData }> = ({ data }) => {
     const [matchTime, setMatchTime] = useState<string>("");
     const [islive, setIsLive] = useState<boolean>(false);
     const dispatch = useDispatch();
+
+    // Vérifie si le match est dans Redux (favoris)
+    const isFavorite = useSelector((state: RootState) =>
+        state.favorites.footballMatches.some(match => match.fixture.id === data.fixture.id)
+    );
 
     useEffect(() => {
         const timestamp: number = data.fixture.timestamp;
@@ -18,40 +26,41 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
             const minutes = String(date.getMinutes()).padStart(2, '0');
             return `${hours}:${minutes}`;
         }
-        // NS === not started
+
         if (data.fixture.status.short === "NS") {
             setMatchTime(formatTime(date));
-            // match finished
         } else if (data.fixture.status.short === "FT") {
             setMatchTime("match finished");
-            // match live
         } else if (data.fixture.status.short === "LIVE" || data.fixture.status.short === '1H') {
             setMatchTime(`${data.fixture.status.elapsed} mins`);
-            setIsLive(true)
+            setIsLive(true);
         } else if (data.fixture.status.short === "HT") {
-            setIsLive(true)
-            setMatchTime("Halftime")
+            setIsLive(true);
+            setMatchTime("Halftime");
+        } else if (data.fixture.status.short === "2H") {
+            setIsLive(true);
+            setMatchTime(`${data.fixture.status.elapsed} mins`);
         }
     }, [data.fixture.timestamp, data.fixture.status.short, data.fixture.status.elapsed]);
-    // Dépendances qui déclenchent l'update
-    const handleRecoverId = () => {
-        // envoyer Id dans redux 
-        dispatch(recoverIds(data.fixture.id))
-    }
+
+    const handleToggleFavorite = () => {
+        dispatch(footballToggleFavorite(data));
+    };
+
 
     return (
         <div className='cardContainer'>
             <div className='left'
-                onClick={handleRecoverId}
+                onClick={handleToggleFavorite}
             >
-                <Star />
+                <Star isFavorite={isFavorite} />
                 <div className='starAndTimeContainer'>
                     <p className={islive ? 'watch live' : "watch"}>{matchTime}</p>
                 </div>
             </div>
             <div className='center'>
                 <div className='teamContainer'>
-                    <p><Image src={data.teams.home.logo} width={30} height={30} alt={`flag of ${data.teams.home.name}`} /></p>
+                    <p><Image src={data?.teams?.home?.logo} width={30} height={30} alt={`flag of ${data.teams.home.name}`} /></p>
                     <p>{data.teams.home.name}</p>
                 </div>
                 <div className={islive ? 'score live' : 'score'}>
@@ -65,9 +74,9 @@ const Card: React.FC<{ data: MatchData }> = ({ data }) => {
                 </div>
             </div>
             <div className='right'>
-                sss
+                <TvContainer />
             </div>
-        </div >
+        </div>
     );
 };
 

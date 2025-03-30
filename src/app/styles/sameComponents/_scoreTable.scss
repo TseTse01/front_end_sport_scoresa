@@ -1,6 +1,9 @@
 .football-container {
   width: 100%;
   margin: 20px auto;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
   .items {
     display: flex;
     justify-content: space-between;
@@ -33,4 +36,10 @@
       }
     }
   }
+}
+
+.navbarCardContainer {
+  background-color: $color-3;
+  padding: 15px;
+  border-radius: 15px;
 }

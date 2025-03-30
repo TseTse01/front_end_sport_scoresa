@@ -5,7 +5,7 @@ const FavorisHeader = () => {
     return (
         <div className='headerContainer'>
             <div className='competitionscontainer'>
-                <p>+teams</p>
+                <p style={{ color: "red" }}>+teams</p>
             </div>
             <div className='matchsContainer'><FavorisLeagueContainer />
             </div>

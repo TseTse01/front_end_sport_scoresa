@@ -14,7 +14,6 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     const handleRecoverId = () => {
         dispatch(replaceId(dataLeaguesId.id));
 
-        // Redirection dynamique avec les données
         router.push(`/football/${dataLeaguesId.country}/`);
     };
 

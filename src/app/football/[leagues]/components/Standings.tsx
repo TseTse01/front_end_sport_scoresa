@@ -19,7 +19,7 @@ const Standings: React.FC<leagueIdAndSeason> = ({ leagueId, leagueSeason }) => {
                     `http://localhost:3000/standings/${leagueId.toString()}/${leagueSeason.toString()}`
                 );
                 const d = response.data;
-                console.log(d, " si on recuperr qq chose dans standings");
+                // console.log(d, " si on recuperr qq chose dans standings");
 
                 if (d.result) {
                     setDataStandings(d.data);

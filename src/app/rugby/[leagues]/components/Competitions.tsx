@@ -10,9 +10,6 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     // console.log(dataLeaguesId);
     const handleRecoverId = () => {
         dispatch(replaceId(dataLeaguesId.id))
-        // console.log(dataLeaguesId.id, "id here");
-
-
     }
     return (
         <div>

@@ -3,7 +3,7 @@ import { Match } from './propsMatchData';
 import Star from '@/app/football/components/Star';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
+// import { recoverIds } from '@/app/GlobalRedux/Features/counter/counterSlice';
 
 
 
