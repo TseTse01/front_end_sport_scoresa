@@ -1,7 +1,8 @@
 "use client";
 import Navbar from "../football/components/Navbar";
+import Footer from "../sameComposant/Footer";
 import FavorisHeader from './components/FavorisHeader';
-// import Home from '../football/Home';
+
 
 
 
@@ -13,6 +14,7 @@ const FavorisPage = () => {
             <div className='home favoris'>
                 <Navbar />
                 <FavorisHeader />
+                <Footer />
             </div>
         </div>
     );

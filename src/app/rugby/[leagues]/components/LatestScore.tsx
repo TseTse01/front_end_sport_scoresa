@@ -9,7 +9,9 @@ const LatestScore: React.FC<LeagueData> = ({ data }) => {
 
     return (
         <div className='football-container league'>
-            <h3>Latest Scores</h3>
+            <div className='latestMatchTitle'>
+                <h3>Latest Scores</h3>
+            </div>
             <RugbyLeagueMatch data={data} />
             <div className='matches'></div>
         </div>

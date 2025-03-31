@@ -8,13 +8,19 @@ $color-6: #173838;
 * {
   margin: 0;
   padding: 0;
+}
+a {
   text-decoration: none !important;
-  // border: 1px solid red;
+}
+body {
+  padding-bottom: 100px;
+  background: #021218 !important;
 }
 .App {
   background: $color-4;
   min-height: 100vh;
   width: 100%;
+  flex: 1;
 }
 .home {
   width: 80%;

@@ -50,10 +50,10 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
         <div className='matchsContainer'>
             <div className="leagueContainer">
                 {dataLatestMatchs && <NavbarLeague data={dataLatestMatchs[0]} />}
-                <BasketTodaymatch />
-                <BasketScheduled />
+                {/* <BasketTodaymatch />
+                <BasketScheduled /> */}
                 {dataLatestMatchs && <BasketLatestMatch data={dataLatestMatchs} />}
-                {dataLatestMatchs && <BasketStandings leagueId={dataLatestMatchs[0].league.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
+                {dataLatestMatchs && <BasketStandings leagueId={dataLatestMatchs[0]?.league?.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
 
             </div>
         </div>

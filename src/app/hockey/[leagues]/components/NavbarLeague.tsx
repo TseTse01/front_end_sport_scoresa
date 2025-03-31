@@ -15,7 +15,7 @@ const NavbarLeague: React.FC<LeagueData> = ({ data }) => {
     return (
         <div className='navbarLeagueLeft'>
             <div className='flex flex1'>
-                <p className='svgball'></p>
+                <p className='svgHockeyBall'></p>
                 <span>HOCKEY</span>
                 <p className='svgflash'></p>
                 <DynamicImage src={data.country.flag ? data.country.flag : ""} alt={data.country.name ? data.country.name + "flag" : "flag"} className={"svgFlag"} />

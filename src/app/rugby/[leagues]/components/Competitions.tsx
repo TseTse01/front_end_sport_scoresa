@@ -12,16 +12,14 @@ const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
         dispatch(replaceId(dataLeaguesId.id))
     }
     return (
-        <div>
-
+        <>
             <h6
+                className='competitionsContainer'
                 onClick={handleRecoverId}
-                style={{ cursor: 'pointer', color: "blue" }}
             >
                 {dataLeaguesId.name}
             </h6>
-        </div>
-
+        </>
     );
 };
 

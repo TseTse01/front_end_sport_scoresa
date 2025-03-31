@@ -7,6 +7,8 @@ interface LeagueData {
 }
 const Standings: React.FC<LeagueData> = ({ leagueId, season }) => {
     const [dataStendings, setDataStendings] = useState<standingPropsRugby[] | undefined>(undefined);
+    const [isTrue, setIsTrue] = useState<boolean>(false);
+
     useEffect(() => {
 
         const fetchData = async () => {
@@ -33,48 +35,52 @@ const Standings: React.FC<LeagueData> = ({ leagueId, season }) => {
 
     }, [leagueId])
     return (
-        <div className="standings-container">
-            <h2>League Standings</h2>
-            <table className="standings-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Team</th>
-                        <th>MP</th>
-                        <th>W</th>
-                        <th>L</th>
-                        <th>G</th>
-                        <th>PTS</th>
-                        <th>FORM</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dataStendings && dataStendings.map((team) => (
-                        <tr key={team.position}>
-                            <td>{team.position}</td>
-                            <td className="team-info">
-                                <img
-                                    src={team.team.logo}
-                                    alt={team.team.name}
-                                    className="team-logo"
-                                />
-                                {team.team.name}
-                            </td>
-                            <td>{team.games.played}</td>
-                            <td>{team.games.win.total}</td>
-                            {/* <td>{team.games.win_overtime.total}</td> */}
-                            <td>{team.games.lose.total}</td>
-                            {/* <td>{team.games.lose_overtime.total}</td> */}
-                            <td>
-                                {team.goals.for}:{team.goals.against}
-                            </td>
-                            <td>{team.games.played}</td>
-                            <td>{team.form}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <>
+            {isTrue &&
+                <div className="standings-container">
+                    <h2>League Standings</h2>
+                    <table className="standings-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Team</th>
+                                <th>MP</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>G</th>
+                                <th>PTS</th>
+                                <th>FORM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {dataStendings && dataStendings.map((team) => (
+                                <tr key={team.position}>
+                                    <td>{team.position}</td>
+                                    <td className="team-info">
+                                        <img
+                                            src={team.team.logo}
+                                            alt={team.team.name}
+                                            className="team-logo"
+                                        />
+                                        {team.team.name}
+                                    </td>
+                                    <td>{team.games.played}</td>
+                                    <td>{team.games.win.total}</td>
+                                    {/* <td>{team.games.win_overtime.total}</td> */}
+                                    <td>{team.games.lose.total}</td>
+                                    {/* <td>{team.games.lose_overtime.total}</td> */}
+                                    <td>
+                                        {team.goals.for}:{team.goals.against}
+                                    </td>
+                                    <td>{team.games.played}</td>
+                                    <td>{team.form}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </>
     );
 };
 

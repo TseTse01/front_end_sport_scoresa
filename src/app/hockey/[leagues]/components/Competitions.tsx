@@ -2,24 +2,21 @@ import Link from "next/link";
 import { idsLeague } from './idsLeague';
 // import { replaceId } from "@/app/GlobalRedux/Features/counter/counterSlice";
 import { useDispatch } from 'react-redux';
+import { replaceId } from "@/app/GlobalRedux/Features/counter/counterSlice";
 interface propsIdsAndName {
     dataLeaguesId: idsLeague;
 }
 
 const Competitions: React.FC<propsIdsAndName> = ({ dataLeaguesId }) => {
     const dispatch = useDispatch()
-    // console.log(dataLeaguesId);
     const handleRecoverId = () => {
-        // dispatch(replaceId(dataLeaguesId.id))
-        // console.log(dataLeaguesId.id);
-
-
+        dispatch(replaceId(dataLeaguesId.id))
     }
     return (
 
         <>
             <h6
-                style={{ color: "blue" }}
+                className="competitionsContainer"
                 onClick={handleRecoverId}
             >
                 {dataLeaguesId.leaguename}

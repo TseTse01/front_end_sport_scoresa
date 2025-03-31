@@ -1,6 +1,6 @@
 .standings-container {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: $color-3;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -17,15 +17,16 @@
     td {
       padding: 10px;
       text-align: center;
+      gap: 5px;
     }
 
     th {
-      background-color: #007bff;
-      color: #fff;
+      background-color: #4e6379;
+      color: #152035;
     }
 
     tr:nth-child(even) {
-      background-color: #f2f2f2;
+      background-color: $color-3;
     }
 
     .team-info {

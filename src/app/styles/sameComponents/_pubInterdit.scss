@@ -1,0 +1,15 @@
+.pub {
+  margin-top: 50px;
+  width: 100%;
+  .pubContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 58%;
+    margin: 0 auto;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}

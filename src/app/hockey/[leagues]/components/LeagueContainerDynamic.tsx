@@ -19,7 +19,6 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
     const [dataLatestMatchs, setDataLatestMatchs] = useState<Match[] | undefined>(undefined);
     const idLeague = useSelector((state: RootState) => state.counter.value.idsLeague)
     const firstLeagueId = dataLeaguesId[0].id.toString()
-    // console.log(dataLeaguesId[0].id.toString(), "dynamic");
 
     useEffect(() => {
 
@@ -49,10 +48,10 @@ const LeagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId }) =>
         <div className='matchsContainer'>
             <div className="leagueContainer">
                 {dataLatestMatchs && <NavbarLeague data={dataLatestMatchs[0]} />}
-                <TodayMatch />
-                <Scheduled />
+                {/* <TodayMatch />
+                <Scheduled /> */}
                 {dataLatestMatchs && <LatestScore data={dataLatestMatchs} />}
-                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0].league.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
+                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0]?.league?.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
             </div>
         </div>
     );

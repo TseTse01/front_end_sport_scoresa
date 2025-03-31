@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
 import Competitions from './components/competitions';
 import LeagueContainerDynamic from './components/LeagueContainerDynamic';
-import Footer from './components/Footer';
+import Footer from '../../sameComposant/Footer';
 import axios from "axios";
 import { idsLeague } from './idsLeague';
 import Navbar from '../components/Navbar';

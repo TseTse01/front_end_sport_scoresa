@@ -6,6 +6,7 @@ import { idsLeague } from './components/idsLeague';
 import { usePathname } from "next/navigation";
 import Navbar from '@/app/football/components/Navbar';
 import LeagueContainerDynamic from './components/LeagueContainerDynamic'
+import Footer from '@/app/sameComposant/Footer';
 const page = () => {
     const [leaguesIds, setLeaguesIds] = useState<idsLeague[]>([]);
     const [messageError, setMessageError] = useState<boolean>(false);
@@ -60,8 +61,8 @@ const page = () => {
                         <div>Aucune ligue trouvée</div>
                     )}
                 </div>
-                {/* <Footer /> */}
             </div>
+            <Footer />
         </div>
     );
 };

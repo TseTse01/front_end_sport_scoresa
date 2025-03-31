@@ -29,7 +29,7 @@ const RugbyleagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId 
                 const d = response.data;
 
 
-                if (d.result) {
+                if (d.result && d.matches.length > 0) {
                     // console.log(d.matches, "rugbyleaguedynamic maan ++");
                     setDataLatestMatchs(d.matches)
                 }
@@ -46,10 +46,10 @@ const RugbyleagueContainerDynamic: React.FC<propsIdsAndName> = ({ dataLeaguesId 
         <div className='matchsContainer'>
             <div className="leagueContainer">
                 {dataLatestMatchs && <RugbtNavbarLeague data={dataLatestMatchs[0]} />}
-                <TodayMatch />
-                <Scheduled />
+                {/* <TodayMatch />
+                <Scheduled /> */}
                 {dataLatestMatchs && <LatestScore data={dataLatestMatchs} />}
-                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0].league.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
+                {dataLatestMatchs && <Standings leagueId={dataLatestMatchs[0]?.league?.id.toString()} season={dataLatestMatchs[0].league.season.toString()} />}
             </div>
         </div>
     );

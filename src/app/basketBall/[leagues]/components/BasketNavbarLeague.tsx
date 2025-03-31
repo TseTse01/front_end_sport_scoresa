@@ -9,17 +9,13 @@ const NavbarLeague: React.FC<LeagueData> = ({ data }) => {
     const formatSeason = (season: number): string => {
         return `${season}-${season + 1}`;
     };
-
-
-    // console.log(data, "data of navbarbasket");
-
     return (
         <div className='navbarLeagueLeft'>
             <div className='flex flex1'>
-                <p className='svgball'></p>
+                <p className='svgBasketBall'></p>
                 <span>BASKETBALL</span>
                 <p className='svgflash'></p>
-                {/* <DynamicImage src={data.league.flag ? data.league.flag : ""} alt={data.league.name ? data.league.name + "flag" : "flag"} className={"svgFlag"} /> */}
+                <DynamicImage src={data.league.flag ? data.league.flag : ""} alt={data.league.name ? data.league.name + "flag" : "flag"} className={"svgFlag"} />
                 <span>{data.league.name.toUpperCase()}</span>
             </div>
             <div className='flex'>
@@ -34,7 +30,7 @@ const NavbarLeague: React.FC<LeagueData> = ({ data }) => {
                     <p className='svg'></p>
                 </div>
             </div>
-            <div className='flex'>
+            <div className='flex flexhover'>
                 <div className="container3">SUMMARY</div>
                 <div className="container3">NEWS</div>
                 <div className="container3">RESULTS</div>

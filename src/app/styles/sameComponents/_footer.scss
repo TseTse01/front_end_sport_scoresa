@@ -1,0 +1,24 @@
+.FooterContainer {
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  width: 55%;
+  margin-top: 35px;
+  .categories {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    .cardCategories {
+      display: grid;
+      width: 25%;
+      gap: 13px;
+    }
+  }
+  .svgContactContainer {
+    margin-bottom: 10px;
+  }
+}
+// font-weight: 700;
+// row-gap: 12px;

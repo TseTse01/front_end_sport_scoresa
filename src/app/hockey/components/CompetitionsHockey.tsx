@@ -25,7 +25,7 @@ const CompetitionsHockey = () => {
             </div>
             <div className="competitions">
                 <p className="flag-cz"></p>
-                <h6><Link href="/hockey/Czech republic">ExtraLiga</Link></h6>
+                <h6><Link href="/hockey/CzechRepublic">ExtraLiga</Link></h6>
             </div>
 
         </div>

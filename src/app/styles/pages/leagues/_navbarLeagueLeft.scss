@@ -14,7 +14,7 @@
   margin: 0 auto;
   .navbarLeagueLeft {
     margin: 0 auto 40px;
-    background-color: $color-1;
+    background-color: $color-3;
     display: flex;
     align-items: flex-start;
     align-content: center;
@@ -33,12 +33,35 @@
         background-image: url("/ball_football.svg");
         @include flag-style;
       }
+      .svgHockeyBall {
+        background-image: url("/hockey.svg");
+        @include flag-style;
+      }
+      .svgMma {
+        background-image: url("/mma.svg");
+        @include flag-style;
+      }
+      .svgRugbyBall {
+        background-image: url("/rugby.svg");
+        @include flag-style;
+      }
+      .svgBasketBall {
+        background-image: url("/basketball.svg");
+        @include flag-style;
+      }
       .svgflash {
         background-image: url("/chevron_right.svg");
         @include flag-style;
         width: 30px;
         height: 30px;
       }
+    }
+  }
+  .flexhover {
+    :hover {
+      color: $color-1;
+      transition: all 1s ease-out;
+      cursor: pointer;
     }
   }
 }
